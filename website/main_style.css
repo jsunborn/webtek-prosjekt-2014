@@ -1,0 +1,42 @@
+body {
+	width: 800px;
+	height: 2000px;
+	margin: 0 auto;
+	background-color: gray;
+}
+
+header {
+	z-index: 0;
+}
+
+aside {
+	position: absolute;
+	left: 0;
+	float: left;
+	width: 200px;
+	height: 400px;
+	border: 1px solid black;
+}
+
+nav {
+	
+}
+
+#sidemenu {
+	
+}
+
+#mainsection {
+	float: rigth;
+	width: 600px;
+	z-index: 0;
+}
+
+.empty {
+	height: 100%;
+	z-index: 0;
+}
+
+.navigation {
+	z-index: 1;
+}
