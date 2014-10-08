@@ -1,0 +1,99 @@
+/*
+
+Green color palette:
+	Background:	#D8F1D3
+	Main:		#BAD696
+	Aside:		#9EBF6D
+	Xtra #1:	#BBE2BC
+	Xtra #2:	#E4F1C3
+
+*/
+
+aside, section, footer {
+	/*
+	The following is a fix that allows you to add padding and borders,
+	without expanding the width/height of the parent.
+	width + padding + border = actual visible/rendered width of box
+	height + padding + border = actual visible/rendered height of box
+	*/
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+body {
+	min-width: 1024px;
+	max-width: 1280px;
+	height: 1000px;
+	background-color: #D8F1D3;
+	margin: 0 auto; /* Center website */
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+aside#empty { /* "Reserves" the space behind sidebar, to prevent other elements to jump in */
+	width: 25%;
+	height: 100%;
+	background-color: #9EBF6D;
+	float: left;
+}
+
+aside#sidebar {
+	width: 100%
+}
+
+nav ul {
+	list-style-type: none;
+	padding-left: 20px;
+	line-height: 150%;
+}
+
+section#mainsection {
+	width: 75%;
+	height: 100%;
+	background-color: #BAD696;
+	float: right;
+	padding: 10px;
+}
+
+section.featured {
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	border-bottom: 1px dashed black;
+	padding: 10px;
+}
+
+section.product-left {
+	width: 48%;
+	height: 200px;
+	border: 1px dashed black;
+	float: left;
+	clear: left;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+section.product-right {
+	width: 48%;
+	height: 200px;
+	border: 1px dashed black;
+	float: right;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+footer {
+	width: 100%;
+	height: 40px;
+	background-color: #2B2B2B;
+	text-align: center;
+	color: #F6F6F6;
+	clear: both;
+}
+
+footer p {
+	padding-top: 10px;
+}
