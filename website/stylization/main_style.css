@@ -8,9 +8,22 @@
 
 */
 
+aside, section, footer {
+	/*
+	The following is a fix that allows you to add padding and borders,
+	without expanding the width/height of the parent.
+	width + padding + border = actual visible/rendered width of box
+	height + padding + border = actual visible/rendered height of box
+	*/
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 body {
-	width: 800px;
-	height: 1000px; /* For testing sticky sidebar */
+	min-width: 1024px;
+	max-width: 1280px;
+	height: 1000px;
 	background-color: #F6F6F6;
 	margin: 0 auto; /* Center website */
 }
@@ -27,7 +40,48 @@ aside#empty { /* "Reserves" the space behind sidebar, to prevent other elements 
 }
 
 aside#sidebar {
+	width: 100%
+}
+
+nav ul {
+	list-style-type: none;
+	padding-left: 20px;
+	line-height: 150%;
+}
+
+section#mainsection {
+	width: 75%;
+	height: 100%;
+	background-color: #EAE581;
+	float: right;
+	padding: 10px;
+}
+
+section.featured {
 	width: 100%;
+	height: 200px;
+	text-align: center;
+	border-bottom: 1px dashed black;
+	padding: 10px;
+}
+
+section.product-left {
+	width: 48%;
+	height: 200px;
+	border: 1px dashed black;
+	float: left;
+	clear: left;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+section.product-right {
+	width: 48%;
+	height: 200px;
+	border: 1px dashed black;
+	float: right;
+	margin-top: 10px;
+	padding: 10px;
 }
 
 footer {
@@ -41,40 +95,4 @@ footer {
 
 footer p {
 	padding-top: 10px;
-}
-
-nav ul {
-	list-style-type: none;
-	padding-left: 20px;
-}
-
-#mainsection {
-	width: 75%;
-	height: 100%;
-	background-color: #EAE581;
-	float: right;
-}
-
-section.featured {
-	width: 100%;
-	height: 200px;
-	text-align: center;
-	border-bottom: 1px dashed black;
-}
-
-section.product-left {
-	width: 45%;
-	height: 200px;
-	border: 1px dashed black;
-	float: left;
-	clear: left;
-	margin: 10px;
-}
-
-section.product-right {
-	width: 45%;
-	height: 200px;
-	border: 1px dashed black;
-	float: right;
-	margin: 10px;
 }
