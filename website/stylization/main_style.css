@@ -33,15 +33,23 @@ h1, h2, h3, h4, h5 {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-aside#empty { /* "Reserves" the space behind sidebar, to prevent other elements to jump in */
-	width: 25%;
+.empty { /* "Reserves" the space behind sidebar, to prevent other elements to jump in */
 	height: 100%;
+}
+
+aside.empty {
+	width: 25%;
 	background-color: #9EBF6D;
 	float: left;
 }
 
-aside#sidebar {
+aside.sidebar {
 	width: 100%
+}
+
+ul.sidemenu li {
+	border: 1px solid black;
+	max-width: 320px;
 }
 
 nav ul {
@@ -50,11 +58,14 @@ nav ul {
 	line-height: 150%;
 }
 
-section#mainsection {
+section.empty {
 	width: 75%;
-	height: 100%;
-	background-color: #BAD696;
 	float: right;
+	background-color: #BAD696;
+}
+
+section.mainsection {
+	width: 100%;
 	padding: 10px;
 }
 

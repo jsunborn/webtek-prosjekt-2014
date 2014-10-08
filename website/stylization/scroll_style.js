@@ -8,7 +8,7 @@ $(document).ready(function() {
 		        }
 
 		        var catcher = $('header');
-		        var sticky = $('#sidebar');
+		        var sticky = $('.sidebar');
 		        $(window).scroll(function() {
 		            if(isScrolledTo(sticky)) {
 		                sticky.css('position','fixed');
