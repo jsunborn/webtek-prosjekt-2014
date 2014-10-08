@@ -3,37 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
-		<link rel="stylesheet" href="../main_style.css">
+		<link rel="stylesheet" href="../stylization/main_style.css">
 		<title>BOARD - Boardgames are Overpowered And Really Delightful</title>
 	</head>
 
 	<body>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-		<script>
-			$(document).ready(function() {
-		        function isScrolledTo(elem) {
-		            var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
-		            var docViewBottom = docViewTop + $(window).height();
-		            var elemTop = $(elem).offset().top; //num of pixels above the elem
-		            var elemBottom = elemTop + $(elem).height();
-		            return ((elemTop <= docViewTop));
-		        }
-
-		        var catcher = $('header');
-		        var sticky = $('#sidebar');
-		        $(window).scroll(function() {
-		            if(isScrolledTo(sticky)) {
-		                sticky.css('position','fixed');
-		                sticky.css('top','0px');
-		            }
-				var stopHeight = catcher.offset().top + catcher.height();
-					if ( stopHeight > sticky.offset().top) {
-		                sticky.css('position','absolute');
-		                sticky.css('top',stopHeight);
-		            }
-		        });
-		    });
-		</script>
+		<script src="../stylization/scroll_style.js"></script>
 
 		<header>
 			<a href="index.html"><img src="http://www.kikisweetbakery.com/wp-content/themes/galaxy/images/headers/header-galaxy.png" alt="Header" width="100%"/></a>
