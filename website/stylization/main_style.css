@@ -1,17 +1,18 @@
 /*
 
-"Cheese" color palette:
-	Black:	#2B2B2B
-	Red:	#DD1B1B
-	Gray:	#F6F6F6
-	Yellow:	#EAE581
+Green color palette:
+	Background:	#D8F1D3
+	Main:		#BAD696
+	Aside:		#9EBF6D
+	Xtra #1:	#BBE2BC
+	Xtra #2:	#E4F1C3
 
 */
 
 body {
 	width: 800px;
 	height: 1000px; /* For testing sticky sidebar */
-	background-color: #F6F6F6;
+	background-color: #D8F1D3;
 	margin: 0 auto; /* Center website */
 }
 
@@ -22,7 +23,7 @@ h1, h2, h3, h4, h5 {
 aside#empty { /* "Reserves" the space behind sidebar, to prevent other elements to jump in */
 	width: 25%;
 	height: 100%;
-	background-color: #DD1B1B;
+	background-color: #9EBF6D;
 	float: left;
 }
 
@@ -51,7 +52,7 @@ nav ul {
 #mainsection {
 	width: 75%;
 	height: 100%;
-	background-color: #EAE581;
+	background-color: #BAD696;
 	float: right;
 }
 
