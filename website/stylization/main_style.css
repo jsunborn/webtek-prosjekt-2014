@@ -22,16 +22,10 @@ aside, section, footer {
 }
 
 body {
-<<<<<<< HEAD
-	width: 800px;
-	height: 1000px; /* For testing sticky sidebar */
-	background-color: #D8F1D3;
-=======
 	min-width: 1024px;
 	max-width: 1280px;
 	height: 1000px;
-	background-color: #F6F6F6;
->>>>>>> origin/maincss
+	background-color: #D8F1D3;
 	margin: 0 auto; /* Center website */
 }
 
