@@ -9,10 +9,15 @@ $(document).ready(function() {
 
 		        var catcher = $('header');
 		        var sticky = $('.sidebar');
+				var stickyTop = $('aside.empty');
+				var stickyList = $('.sidemenu ul li');
+				var stickyWidth = $('body').width()*0.2335;
+				
 		        $(window).scroll(function() {
-		            if(isScrolledTo(sticky)) {
+		            if(isScrolledTo(stickyTop)) {
 		                sticky.css('position','fixed');
 		                sticky.css('top','0px');
+						stickyList.css('max-width',stickyWidth);
 		            }
 				var stopHeight = catcher.offset().top + catcher.height();
 					if ( stopHeight > sticky.offset().top) {

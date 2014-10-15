@@ -47,15 +47,15 @@ aside.sidebar {
 	width: 100%
 }
 
-ul.sidemenu li {
-	border: 1px solid black;
-	max-width: 320px;
-}
-
-nav ul {
+nav.sidemenu ul {
 	list-style-type: none;
 	padding-left: 20px;
 	line-height: 150%;
+}
+
+nav.sidemenu ul li {
+	border: 1px solid black;
+	max-width: 320px;
 }
 
 section.empty {
