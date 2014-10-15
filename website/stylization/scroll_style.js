@@ -11,7 +11,15 @@ $(document).ready(function() {
 		        var sticky = $('.sidebar');
 				var stickyTop = $('aside.empty');
 				var stickyList = $('.sidemenu ul li');
-				var stickyWidth = $('aside.empty').width()-22;//*0.2335;
+				
+				var stickyWidth =
+					parseInt($('aside.empty').css('width')) -
+				(
+					parseInt($('nav.sidemenu ul').css('padding-left')) + 
+					parseInt($('nav.sidemenu ul li').css('margin-right')) + 
+					parseInt($('nav.sidemenu ul li').css('border-left-width')) + 
+					parseInt($('nav.sidemenu ul li').css('border-right-width'))
+				);
 				
 		        $(window).scroll(function() {
 		            if(isScrolledTo(stickyTop)) {
