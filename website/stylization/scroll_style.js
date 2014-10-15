@@ -11,7 +11,7 @@ $(document).ready(function() {
 		        var sticky = $('.sidebar');
 				var stickyTop = $('aside.empty');
 				var stickyList = $('.sidemenu ul li');
-				var stickyWidth = $('body').width()*0.2335;
+				var stickyWidth = $('aside.empty').width()-22;//*0.2335;
 				
 		        $(window).scroll(function() {
 		            if(isScrolledTo(stickyTop)) {
