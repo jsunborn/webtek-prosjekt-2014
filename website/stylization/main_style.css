@@ -1,14 +1,13 @@
 /*
+
 Green color palette:
 	Background:	#D8F1D3
 	Main:		#BAD696
 	Aside:		#9EBF6D
 	Xtra #1:	#BBE2BC
 	Xtra #2:	#E4F1C3
-*/
 
-/* Font: Amaranth */
-@import url(http://fonts.googleapis.com/css?family=Amaranth);
+*/
 
 aside, section, footer {
 	/*
@@ -30,7 +29,7 @@ body {
 	margin: 0 auto; /* Center website */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5 {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -55,21 +54,8 @@ nav.sidemenu ul {
 }
 
 nav.sidemenu ul li {
-	margin: 0px 20px 8px 0px;
 	border: 1px solid black;
-	border-radius: 4px;
-	padding: 4px 0px 4px 0px;
-	font-family: "Amaranth", Tahoma, Verdana, Helvetica, sans-serif;
-	font-size: 1.3em;
-}
-
-nav.sidemenu ul :hover {
-	background-color: #89C765;
-}
-
-nav.sidemenu ul li a {
-	display: block;
-	text-align: center;
+	max-width: 320px;
 }
 
 section.empty {
@@ -109,14 +95,6 @@ section.product-right {
 	margin-top: 10px;
 	padding: 10px;
 }
-
-a:link, a:visited {
-	color: #fff;
-}
-
-a:hover, a:active {
-	color: #000;
-} 
 
 footer {
 	width: 100%;
