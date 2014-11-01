@@ -3,14 +3,14 @@
 	<head>
         <meta charset="UTF-8">
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
+		<meta name="product" content="firefly"/>
 		<link rel="stylesheet" href="../stylization/main_style.css">
         <link rel="stylesheet" href="../stylization/product_style.css">
 		<title>BOARD | Firefly</title>
-	</head>
-    <body>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../stylization/scroll_style.js"></script>
-
+	</head>
+    <body>
 		<header>
 			<a href="index.html"><img src="http://www.kikisweetbakery.com/wp-content/themes/galaxy/images/headers/header-galaxy.png" alt="Header" width="100%"/></a>
 		</header>
@@ -35,11 +35,13 @@
                     <img src="../images/firefly.png" alt="Firefly"/>
                     <div id="productinfo">
                         <h3>Firefly</h3>
-                        <p>Price info</p>
-                        <p>and</p>
-                        <p>other</p>
-                        <p>stuff</p>
-                        <p>goes here</p>
+                        <div id="productdetails">
+							<p>Price info</p>
+							<p>Availability</p>
+							<p>Shipping?</p>
+							<p>' '</p>
+							<button id = "addproduct" type="button">Add to cart</button>
+						</div>
                     </div>
                 </div>
                 <div id="description">
@@ -53,5 +55,6 @@
 		<footer>
 			<p>&copy; 2014 - BOARD</p>
 		</footer>
+		<script src="../stylization/add_to_cart.js"></script>
 	</body>
 </html>
