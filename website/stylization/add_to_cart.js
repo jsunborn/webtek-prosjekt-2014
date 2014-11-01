@@ -1,7 +1,7 @@
 var AddToCart = (function() {
 	function $id(x) {return document.getElementById(x);}
 	function $tag(x) {return document.getElementsByTagName(x);}
-	var identifier = "WEBTEKBOARD";
+	var identifier = "WEBTEKBOARD:";
 	var stringsplit = ',';
 	
 	var getProductName = function() {
