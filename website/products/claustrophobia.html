@@ -3,13 +3,14 @@
 	<head>
         <meta charset="UTF-8">
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
+		<meta name="product" content="claustrophobia"/>
 		<link rel="stylesheet" href="../stylization/main_style.css">
+        <link rel="stylesheet" href="../stylization/product_style.css">
 		<title>BOARD | Claustrophobia</title>
-	</head>
-    <body>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../stylization/scroll_style.js"></script>
-
+	</head>
+    <body>
 		<header>
 			<a href="index.html"><img src="http://www.kikisweetbakery.com/wp-content/themes/galaxy/images/headers/header-galaxy.png" alt="Header" width="100%"/></a>
 		</header>
@@ -30,11 +31,33 @@
 
 		<section class="empty">
             <section class="mainsection">
+                <div id="imageandinfo">
+                    <img src="../images/claustrophobia.jpg" alt="Claustrophobia"/>
+                    <div id="productinfo">
+                        <h3>Claustrophobia</h3>
+                        <div id="productdetails">
+							<p>Price info</p>
+							<p>Availability</p>
+							<p>Shipping?</p>
+							<p>' '</p>
+							<button id = "addproduct" type="button">Add to cart</button>
+						</div>
+                    </div>
+                </div>
+                <div id="description">
+                    <p id="firstline">Claustrophobia is a miniatures-based dungeon crawl game set within the universe of Hell Dorado.</p>
+                    <p>The box contains pre-painted miniatures which are placed on large tiles showing the dungeon spaces. Also included are character boards, counters and markers, and dice.</p>
+                    <p>One player controls a small group of determined humans, while the other plays an almost unending army of demonic creatures. The game is thematic and highly asymmetric: human characters are stronger, but the demon characters are more numerous. Gameplay is very straightforward with a minimum of rules, and each game plays in an hour or less.</p>
+                    <p>In essence dice are allocated after rolling to perform actions, while cards or special abilities are also available. The game is about managing decisions and choosing what to do with the resources that you have, managing difficult events and out-thinking your opponent. Combat is handled by dice.
+                    <p>Complexity is low, with the focus on theme and building towards a tense, climactic ending.</p>
+                    <p>Claustrophobia is played through scenarios of which there are several in the rulebook. Generally speaking the human characters are attempting to complete a task (e.g. escape the catacombs, close a portal) while the demons are focussed on stopping them. There are varying win conditions depending on the scenario chosen.</p>
+                </div>
             </section>
         </section>
 
 		<footer>
 			<p>&copy; 2014 - BOARD</p>
 		</footer>
+		<script src="../stylization/add_to_cart.js"></script>
 	</body>
 </html>
