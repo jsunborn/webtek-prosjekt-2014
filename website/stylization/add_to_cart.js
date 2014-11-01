@@ -24,7 +24,7 @@ var AddToCart = (function() {
 			}
 			else {
 				product = sessionStorage.getItem((identifier+product[0])).split(stringsplit);
-				product[2] = parseInt(product[2]) + 1;
+				product[1] = parseInt(product[1]) + 1;
 			}
 			sessionStorage.setItem((identifier+product[0]), product);
 		}
