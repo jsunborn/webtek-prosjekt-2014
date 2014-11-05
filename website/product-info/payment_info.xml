@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+	<product>
+		<name>A Game of Thrones</name>
+		<price>599</price>
+		<location>../products/agameofthrones.html</location>
+	</product>
+	
+	<product>
+		<name>Chez Goth</name>
+		<price>169</price>
+		<location>../products/chezgoth.html</location>
+	</product>
+	
+	<product>
+		<name>Chupacabra</name>
+		<price>169</price>
+		<location>../products/chupacabra.html</location>
+	</product>
+	
+	<product>
+		<name>Claustrophobia</name>
+		<price>552</price>
+		<location>../products/claustrophobia.html</location>
+	</product>
+	
+	<product>
+		<name>Dungeon Lords</name>
+		<price>509</price>
+		<location>../products/dungeonlords.html</location>
+	</product>
+	
+	<product>
+		<name>Firefly</name>
+		<price>424</price>
+		<location>../products/firefly.html</location>
+	</product>
+	
+	<product>
+		<name>Junta!</name>
+		<price>424</price>
+		<location>../products/junta!.html</location>
+	</product>
+</products>
