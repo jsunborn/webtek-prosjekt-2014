@@ -38,6 +38,10 @@ h1, h2, h3, h4, h5, h6 {
 	height: 100%;
 }
 
+.center {
+	text-align: center;
+}
+
 aside.empty {
 	width: 25%;
 	background-color: #9EBF6D;
@@ -102,4 +106,23 @@ footer {
 
 footer p {
 	padding-top: 10px;
+}
+
+td {
+	border-bottom: 1px solid black;
+	padding: 5px;
+}
+
+#shoppingcart {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.name-column {
+	width: 80%;
+}
+
+.error-msg {
+	color: red;
+	font-style: italic;
 }
