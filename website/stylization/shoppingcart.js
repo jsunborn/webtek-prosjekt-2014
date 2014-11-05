@@ -100,12 +100,15 @@ function updateRows() {
 
         for (i = 0; i < rowCount; i++) { // Go through todo's and see if checkbox is checked
             var row = rows[i]
+            console.log(row);
             var amount = row.getElementsByTagName('input')[0];
 
             if (amount.value == 0) {
-                sessionStorage.removeItem(amount.name); // Remove from sessionStorage
+                sessionStorage.removeItem("WEBTEKBOARD:" + amount.name); // Remove from sessionStorage
                 table.removeChild(row); // Remove row from table
                 numberOfItemsInCart--; // Reduce number of items in cart
+                i--; // Reduce for loop count, to prevent out of bounds error
+                rowCount--; // Reduce row count, to prevent out of bounds error
                 printMessage("Produktet ble fjernet.", "green");
             }
             else {
