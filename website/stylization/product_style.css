@@ -17,6 +17,7 @@
 
 .product-button:hover{
 	background-color: white;
+	cursor: pointer;
 }
 
 .quote {
