@@ -1,20 +1,18 @@
 function $id(id) { return document.getElementById(id); } // Shorthand for getElementById
 function $tag(id) { return document.getElementsByTagName(id); }
 
-var table = $id('shoppingcart');
+var table = $id('shopping-cart-table');
 
-sessionStorage.WEBTEKBOARDnavnpåspill = "navnpåspill,99";
-
+var PRODUCT_MAX_AMOUNT = 10;
 var numberOfItemsInCart = 0;
-var errorMessageElement = document.createElement("p");
-var errorText = document.createTextNode("");
-errorMessageElement.appendChild(errorText);
-errorMessageElement.className = "error-msg";
-table.appendChild(errorMessageElement);
+
+var messageElement = $id("display-message");
+var messageText = document.createTextNode("");
+messageElement.appendChild(messageText);
 
 for (var name in sessionStorage) { // Iterate all stored names
 
-    if (name.substring(0, 11) == "WEBTEKBOARD") {
+    if (name.substring(0, 12) == "WEBTEKBOARD:") {
         var product = sessionStorage.getItem(name).split(",");
 
         var tableRow = document.createElement("tr");
@@ -48,24 +46,51 @@ isCartEmpty(); // Check if cart is empty
 // Event listeners
 var updateButton = $id('update-button');
 updateButton.addEventListener('click', function() { // Listeners for the buttons
-    updateRows();
+    if (rowsValid()) { // Check if rows are valid
+        updateRows(); // Update rows
+    }
 })
 
 // If shopping cart is empty, display message
 function isCartEmpty() {
     if (numberOfItemsInCart == 0) {
-        printError("Handlekurven er tom.")
+        printMessage("Handlekurven er tom.", "black");
     }
 }
 
-function printError(msg) {
-    errorText.nodeValue = msg;
-
-    // TODO: Fix error message displaying multiple times
+function printMessage(msg, color) {
+    messageElement.style.color = color;
+    messageText.nodeValue = msg;
 }
 
-function clearError() {
-    errorText.nodeValue = null;
+function rowsValid() {
+    if (numberOfItemsInCart > 0) {
+        var rows = table.getElementsByTagName('tr'); // Get todo list
+        var rowCount = rows.length;
+        var valid = true;
+
+        for (i = 0; i < rowCount; i++) { // Go through todo's and see if checkbox is checked
+            var row = rows[i]
+            var amount = row.getElementsByTagName('input')[0];
+
+            if (isNaN(amount.value)) { // Amount not a number
+                printMessage("Antall varer må være en tallverdi.", "red");
+                valid = false;
+                break;
+            }
+            else if (amount.value < 0) { // Amount smaller than zero
+                printMessage("Antall varer må være større enn 0.", "red");
+                valid = false;
+                break;
+            }
+            else if (amount.value > PRODUCT_MAX_AMOUNT) { // Amount higher than max amount
+                printMessage("Maks antall varer er " + PRODUCT_MAX_AMOUNT + ".", "red");
+                valid = false;
+                break;
+            }
+        }
+        return valid;
+    }
 }
 
 function updateRows() {
@@ -77,23 +102,17 @@ function updateRows() {
             var row = rows[i]
             var amount = row.getElementsByTagName('input')[0];
 
-            if (isNaN(amount.value)) {
-                printError("Vennligst skriv inn tallverdi");
-            }
-            else if (amount.value == 0) {
-                sessionStorage.removeItem(amount.name);
-                table.removeChild(row); // If checked, remove this todo
+            if (amount.value == 0) {
+                sessionStorage.removeItem(amount.name); // Remove from sessionStorage
+                table.removeChild(row); // Remove row from table
                 numberOfItemsInCart--; // Reduce number of items in cart
-                clearError(); // Clear errors (if any)
-            }
-            else if (amount.value > 0) {
-                sessionStorage.setItem(("WEBTEKBOARD" + amount.name), (amount.name + "," + amount.value));
-                clearError();
+                printMessage("Produktet ble fjernet.", "green");
             }
             else {
-                printError("Antall må være positiv!");
+                sessionStorage.setItem(("WEBTEKBOARD:" + amount.name), (amount.name + "," + amount.value));
+                printMessage("Antall varer ble oppdatert.", "green");
             }
         }
-        isCartEmpty();
+        isCartEmpty(); // Run a check to see if shopping cart has been emptied.
     }
 }

@@ -109,20 +109,22 @@ footer p {
 }
 
 td {
-	border-bottom: 1px solid black;
 	padding: 5px;
 }
 
-#shoppingcart {
+.shopping-cart {
 	width: 600px;
 	margin: 0 auto;
+}
+
+#shopping-cart-table {
+	width: 100%;
 }
 
 .name-column {
 	width: 80%;
 }
 
-.error-msg {
-	color: red;
+.display-message {
 	font-style: italic;
 }
