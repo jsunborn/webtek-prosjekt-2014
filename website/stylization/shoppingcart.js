@@ -100,7 +100,6 @@ function updateRows() {
 
         for (i = 0; i < rowCount; i++) { // Go through todo's and see if checkbox is checked
             var row = rows[i]
-            console.log(row);
             var amount = row.getElementsByTagName('input')[0];
 
             if (amount.value == 0) {
