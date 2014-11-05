@@ -3,13 +3,14 @@
 	<head>
         <meta charset="UTF-8">
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
+		<meta name="product" content="Dungeon Lords"/>
 		<link rel="stylesheet" href="../stylization/main_style.css">
+        <link rel="stylesheet" href="../stylization/product_style.css">
 		<title>BOARD | Dungeon Lords</title>
-	</head>
-    <body>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../stylization/scroll_style.js"></script>
-
+	</head>
+    <body>
 		<header>
 			<a href="index.html"><img src="http://www.kikisweetbakery.com/wp-content/themes/galaxy/images/headers/header-galaxy.png" alt="Header" width="100%"/></a>
 		</header>
@@ -30,11 +31,36 @@
 
 		<section class="empty">
             <section class="mainsection">
+                <div id="imageandinfo">
+                    <img src="../images/dungeonlords.jpg" alt="Dungeon Lords"/>
+                    <div id="productinfo">
+                        <h3>Dungeon Lords</h3>
+                        <div id="productdetails">
+							<p>Price info</p>
+							<p>Availability</p>
+							<p>Shipping?</p>
+							<p>' '</p>
+							<button id = "addproduct" type="button">Add to cart</button>
+						</div>
+                    </div>
+                </div>
+                <div id="description">
+                    <p id="firstline">In Dungeon Lords, you are an evil dungeonlord who is trying to build the best dungeon out there. You hire monsters, build rooms, buy traps and defeat the do-gooders who wish to bring you down.</p>
+                    <p>Have you ever ventured with party of heroes to conquer dungeons, gain pride, experiences and of course rich treasure? And has it ever occurred to you how hard it actually is to build and manage such underground complex filled with corridors and creatures? No? Well now you can try. Put yourself in role of the master of underground, summon your servants, dig complex of tunnels and rooms, set traps, hire creatures and try to stop filthy heroes from conquering and plundering your precious creation. We can guarantee you will look on dark corners, lairs and their inhabitant from completely different perspective!</p>
+                    <p>Each turn, players use a hand of cards to choose where to place their worker. Actions vary from mining gold, hiring monsters, buying traps etc. Each action has three spots available - with each spot having different effects (e.g. mining gold lets you mine more gold in each spot).</p>
+                    <p>When using the cards, two cards will become locked and will not be able to be used next turn.</p>
+                    <p>There are 4 turns to place actions for each game "year" and two game years in a whole game.</p>
+                    <p>Each turn is identified as a "season". Each season, players will get to see the heroes and events to come in the following season. Thus allowing them to prepare.</p>
+                    <p>At the end of each season (after the first), heroes will be allocated to each player according to their level of evil. Heroes range from mighty heroes to sneaky thieves. Each hero has their own power for which the player needs to prepare for.</p>
+                    <p>Finally, at the end of each year, the heroes will travel down into the dungeon to fight.</p>
+                    <p>Scoring in the game is based upon what you have built, the monsters you have hired and the heroes you have captured.</p>
+                </div>
             </section>
         </section>
 
 		<footer>
 			<p>&copy; 2014 - BOARD</p>
 		</footer>
+		<script src="../stylization/add_to_cart.js"></script>
 	</body>
 </html>
