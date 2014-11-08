@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <meta charset="UTF-8"/>
+		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring"/>
+		<meta name="product" content="Star Wars the Card Game"/>
+		<link rel="stylesheet" href="../stylization/main_style.css"/>
+        <link rel="stylesheet" href="../stylization/product_style.css"/>
+		<title>BOARD | Star Wars: The Card Game</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script src="../stylization/scroll_style.js"></script>
+	</head>
+    <body>
+		<header>
+			<a href="index.html"><img src="http://www.kikisweetbakery.com/wp-content/themes/galaxy/images/headers/header-galaxy.png" alt="Header" width="100%"/></a>
+		</header>
+
+		<aside class="empty">
+			<aside class="sidebar">
+				<nav class="sidemenu">
+					<ul>
+						<li><a href="../home/index.html">Home</a></li>
+						<li><a href="../home/products.html">Products</a></li>
+						<li><a href="../company_information/contact_us.html">Contact Us</a></li>
+						<li><a href="../company_information/site_info.html">Information</a></li>
+						<li><a href="../company_information/tou.html">Terms of Use</a></li>
+					</ul>
+				</nav>
+			</aside>
+		</aside>
+
+		<section class="empty">
+            <section class="mainsection">
+                <div id="imageandinfo">
+                    <img src="../images/starwarsthecardgame.jpg" alt="Star Wars the Card Game"/>
+                    <div id="productinfo">
+                        <h3>Star Wars: The Card Game</h3>
+						<div id="productdetails">
+							<div><h4>Price info</h4><p>339,-</p></div>
+							<div><h4>Availability</h4><p>In stock</p></div>
+							<div><h4>Shipping</h4><p>Included</p></div>
+							<p class="quote">'Use the force, Harry!'</p>
+							<button id="addproduct" class="product-button" type="button">Add to cart</button>
+						</div>
+                    </div>
+                </div>
+                <div id="description">
+                    <p id="firstline">It is a dark time for the galaxy.</p>
+
+                    <p>The Galactic Empire has consolidated its dominion through the might of the Imperial Navy. In the underworld of the Empire's most populated planets, and in strongholds throughout the Outer Rim, powerful gangsters rule vast criminal organizations. From the shadows, those lost to the grip of the dark side of the Force scheme to bring their evil designs to bear on an already oppressed galaxy.</p>
+
+					<p>Yet not all hope is lost. The Rebel Alliance resists the iron grip of the Empire. Smugglers and other fringe elements lend their aid to the Rebellion. And unknown to the Emperor and his dark minions of the Sith, the last remnants of the noble Jedi Order work tirelessly to restore peace and order to the galaxy.</p>
+
+					<p>Star Wars: The Card Game is a two-player card game that puts one player in command of the Rebels (light side, with the factions Jedi, Rebel Alliance, and Smugglers And Spies), and one player in command of the Empire (dark side, with the factions Sith, Imperial Navy, and Scum And Villainy). The Balance of the Force expansion allows multi-player games. The game is set within the time-frame of the original Star Wars trilogy.</p>
+
+					<p>Each player has a deck of objective cards representing various missions plus a deck of player cards of units (characters, vehicles, droids and creatures), events, enhancements and fates. Each objective is linked to a set of five player cards. Deck construction consists of choosing which objectives are to go into your objective deck, then adding each of those objective's set of five player cards to your player deck. Game play consists of deploying cards to your tableau, attacking your opponent's objectives, defending your own objectives, and committing cards to the Force Struggle.</p>
+
+					<p>The Empire wins if the Death Star dial reaches 12, with this dial increasing by one on each dark side turn, effectively putting a timer on the game. It may also be increased by winning the Force struggle, destroying light side objectives, and via card effects. The Rebels win by destroying three dark side objectives before the Empire wins.</p>
+                </div>
+            </section>
+        </section>
+
+		<footer>
+			<p>&copy; 2014 - BOARD</p>
+		</footer>
+		<script src="../stylization/add_to_cart.js"></script>
+	</body>
+</html>
