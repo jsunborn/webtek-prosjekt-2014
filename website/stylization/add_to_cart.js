@@ -57,7 +57,7 @@ var AddToCart = (function() {
 		}
 		console.log(price);
 	}
-	/*
+	*/
 	
 	var addProduct = function() {
 		var product = getProductName();
