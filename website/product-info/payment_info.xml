@@ -41,4 +41,70 @@
 		<price>424</price>
 		<location>../products/junta!.html</location>
 	</product>
+
+	<product>
+		<name>Ticket to Ride Anniversary</name>
+		<price>679</price>
+		<location>../products/tickettorideanniversary.html</location>
+	</product>
+
+	<product>
+		<name>Ticket to Ride</name>
+		<price>365</price>
+		<location>../products/.html</location>
+	</product>
+
+	<product>
+		<name>Enigma</name>
+		<price>382</price>
+		<location>../products/enigma.html</location>
+	</product>
+
+	<product>
+		<name>Monopoly World of Warcraft</name>
+		<price>424</price>
+		<location>../products/monopolyworldofwarcraft.html</location>
+	</product>
+
+	<product>
+		<name>Monopoly Doctor Who</name>
+		<price>382</price>
+		<location>../products/monopolydoctorwho.html</location>
+	</product>
+
+	<product>
+		<name>The Rivals for Catan</name>
+		<price>144</price>
+		<location>../products/therivalsforcatan.html</location>
+	</product>
+
+	<product>
+		<name>Carassonne</name>
+		<price>297</price>
+		<location>../products/carassonne.html</location>
+	</product>
+
+	<product>
+		<name>Star of Africa</name>
+		<price>212</price>
+		<location>../products/starofafrica.html</location>
+	</product>
+
+	<product>
+		<name>5 Second Rule</name>
+		<price>339</price>
+		<location>../products/5secondrule.html</location>
+	</product>
+
+	<product>
+		<name>Mage Wars</name>
+		<price>509</price>
+		<location>../products/magewars.html</location>
+	</product>
+
+	<product>
+		<name>Star Wars the Card Game</name>
+		<price>339</price>
+		<location>../products/starwarsthecardgame.html</location>
+	</product>
 </products>
