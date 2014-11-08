@@ -39,22 +39,25 @@ var AddToCart = (function() {
 		// Loop over all products in storage
 		for(var i=0; i<sessionStorage.length; i++) {
 			// Get one product
-			var product = sessionStorage.getItem(sessionStorage.key(i)).split(stringsplit);
-			// Loop over all products in xml-file
-			for(var j=0; j<products.length; j++) {
-				// If (when) they match, get price and multiply by number of products
-				if(products[i].innerHTML == product[0]) {
-					console.log(product);
-					var prodPrice = products[i].parentNode.getElementsByTagName("price")[0].innerHTML;
-					console.log(prodPrice);
-					price += (prodPrice * product[1])
-					break;
+			var key = sessionStorage.key(i);
+			// Check if ID comes from our webpage
+			if (key.substring(0, 11) == identifier) {
+				var product = sessionStorage.getItem(key).split(stringsplit);
+				// Loop over all products in xml-file
+				for(var j=0; j<products.length; j++) {
+					// If (when) they match, get price and multiply by number of products
+					if(products[i].innerHTML == product[0]) {
+						console.log(product);
+						var prodPrice = products[i].parentNode.getElementsByTagName("price")[0].innerHTML;
+						price += (prodPrice * product[1])
+						break;
+					}
 				}
 			}
 		}
 		console.log(price);
 	}
-	*/
+	/*
 	
 	var addProduct = function() {
 		var product = getProductName();
