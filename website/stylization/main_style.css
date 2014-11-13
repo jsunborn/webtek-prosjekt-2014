@@ -119,6 +119,13 @@ td {
 
 #shopping-cart-table {
 	width: 100%;
+	border: 1px solid black;
+	background-color: #9EBF6D;
+}
+
+#shopping-cart-table img {
+	max-width: 70px;
+	max-height: 70px;
 }
 
 .name-column {
@@ -127,4 +134,15 @@ td {
 
 .display-message {
 	font-style: italic;
+}
+
+#update-button {
+	width: 80px;
+	font-size: 1.2em;
+	margin-right: 50px;
+}
+
+#checkout-button {
+	width: 80px;
+	font-size: 1.2em;
 }
