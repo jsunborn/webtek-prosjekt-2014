@@ -3,7 +3,7 @@ function $tag(id) { return document.getElementsByTagName(id); }
 
 var table = $id('shopping-cart-table'); // Get the table from HTML used to display shopping cart
 
-// Get message element where error and confirmation messages are displayed
+// Get message element to display error and confirmation messages
 var messageElement = $id("display-message");
 var messageText = document.createTextNode("");
 messageElement.appendChild(messageText);
@@ -12,12 +12,14 @@ messageElement.appendChild(messageText);
 var PRODUCT_MAX_AMOUNT = 10; // Max amount pr. products
 var identifier = "WEBTEKBOARD"; // Identifier for the session storage
 var numberOfItemsInCart = 0; // Variable that holds number of distinct items in cart
+var totalSum = 0;
 
-// TODO Prevent this: javascript:sessionStorage.setItem("WEBTEKBOARD:Testspill", "Testspill,2");
+// TODO javascript:sessionStorage.setItem("WEBTEKBOARD:Testspill", "Testspill,2");
 
+// Populate shopping cart from sessionStorage
 for (var name in sessionStorage) { // Iterate all items in sessionStorage
 
-    // Add valid items to shopping cart with picture, name and amount
+    // Add valid items to shopping cart with picture, name, amount and price
     if (name.substring(0, identifier.length) == identifier) {
         var product = sessionStorage.getItem(name).split(",");
 
@@ -25,9 +27,11 @@ for (var name in sessionStorage) { // Iterate all items in sessionStorage
         var tableData1 = document.createElement("td");
         var tableData2 = document.createElement("td");
         var tableData3 = document.createElement("td");
+        var tableData4 = document.createElement("td");
         tableRow.appendChild(tableData1);
         tableRow.appendChild(tableData2);
         tableRow.appendChild(tableData3);
+        tableRow.appendChild(tableData4);
 
         var image = document.createElement("img");
         image.src = "../images/agameofthrones.jpg"; // TODO Get correct image path for every product
@@ -46,13 +50,40 @@ for (var name in sessionStorage) { // Iterate all items in sessionStorage
         itemAmount.value = getProductAmount(product);
         tableData3.appendChild(itemAmount);
 
-        table.appendChild(tableRow);
+        var price = document.createTextNode("");
+        var productSum = getProductAmount(product) * getProductPrice(product);
+        totalSum += productSum;
+        price.nodeValue = productSum + ",-";
+        tableData4.appendChild(price);
 
+        table.appendChild(tableRow); // Finally, add tablerow to table
         numberOfItemsInCart++; // Advance number of items in cart by 1
     }
 }
 
-isCartEmpty(); // Check if cart is empty
+if (! isCartEmpty()) {
+    var tableRow = document.createElement("tr");
+    var tableData1 = document.createElement("td");
+    var tableData2 = document.createElement("td");
+    var tableData3 = document.createElement("td");
+    var tableData4 = document.createElement("td");
+    tableRow.appendChild(tableData1);
+    tableRow.appendChild(tableData2);
+    tableRow.appendChild(tableData3);
+    tableRow.appendChild(tableData4);
+
+    var totalSumText = document.createElement("b");
+    var totalSumTextNode = document.createTextNode("Total:");
+    totalSumText.appendChild(totalSumTextNode);
+    tableData3.appendChild(totalSumText);
+
+    var totalSumElement = document.createElement("b");
+    var totalSumNode = document.createTextNode(totalSum + ",-");
+    totalSumElement.appendChild(totalSumNode);
+    tableData4.appendChild(totalSumElement);
+
+    table.appendChild(tableRow);
+}
 
 function getProductName(product) {
     return product[0];
@@ -62,11 +93,17 @@ function getProductAmount(product) {
     return product[1];
 }
 
+function getProductPrice(product) {
+    return 499; // TODO Get product price from XML
+}
+
 // If shopping cart is empty, display message
 function isCartEmpty() {
     if (numberOfItemsInCart == 0) {
         printMessage("Shopping cart is empty.", "black");
+        return true;
     }
+    return false;
 }
 
 function printMessage(msg, color) {
@@ -79,11 +116,11 @@ function clearMessage() {
 }
 
 function rowsValid() {
-    var rows = table.getElementsByTagName('tr'); // Get todo list
-    var rowCount = rows.length;
+    var rows = table.getElementsByTagName('tr');
+    var rowCount = rows.length - 1; // Exclude last row, which contains sum etc.
     var isValid = true;
 
-    for (i = 0; i < rowCount; i++) { // Go through todo's and see if checkbox is checked
+    for (i = 0; i < rowCount; i++) {
         var row = rows[i]
         var amount = row.getElementsByTagName('input')[0];
 
@@ -109,12 +146,12 @@ function rowsValid() {
     return isValid;
 }
 
-function updateRows() {
+function updateRows() { // Update rows in shopping cart
     if (numberOfItemsInCart > 0) {
-        var rows = table.getElementsByTagName('tr'); // Get todo list
-        var rowCount = rows.length;
+        var rows = table.getElementsByTagName('tr');
+        var rowCount = rows.length - 1; // Exclude last row, which contains sum etc.
 
-        for (i = 0; i < rowCount; i++) { // Go through todo's and see if checkbox is checked
+        for (i = 0; i < rowCount; i++) {
             var row = rows[i]
             var amount = row.getElementsByTagName('input')[0];
 
@@ -131,20 +168,45 @@ function updateRows() {
                 printMessage("Product amount was changed.", "green");
             }
         }
-        isCartEmpty(); // Run a check to see if shopping cart has been emptied.
+
+        if (! isCartEmpty()) {
+            updatePrices();
+        }
     }
 }
 
+function updatePrices() { // Update product prices and total sum
+    totalSum = 0; // Reset total sum
+    var rows = table.getElementsByTagName('tr');
+    var rowCount = rows.length; // Exclude last row, which contains sum etc.
+
+    for (i = 0; i < rowCount - 1; i++) { // Iterate through rows, except last row, which displays total sum
+        var row = rows[i]
+        var amount = row.getElementsByTagName('input')[0];
+        var product = [row.getElementsByTagName('td')[1].childNodes[0].nodeValue, amount.value];
+        var productSumNode = row.getElementsByTagName('td')[3].childNodes[0];
+
+        var productSumNew = getProductAmount(product) * getProductPrice(product); // Calculate product sum
+        totalSum += productSumNew; // Update total sum
+
+        productSumNode.nodeValue = productSumNew + ",-";
+    }
+
+    var totalRow = rows[rowCount - 1]; // Get last row
+    var totalSumNodeNew = totalRow.getElementsByTagName('td')[3].getElementsByTagName('b')[0].childNodes[0]; // Get total sum node
+    totalSumNodeNew.nodeValue = totalSum + ",-"; // Update total sum
+}
+
 // Event listeners
-var updateButton = $id('update-button');
-updateButton.addEventListener('click', function() { // Listeners for the buttons
+var updateButton = $id('update-button'); // Get button element from HTML
+updateButton.addEventListener('click', function() { // Listener for update button
     if (rowsValid()) { // Check if rows are valid
         updateRows(); // Update rows
     }
 })
 
-var checkoutButton = $id('checkout-button');
-checkoutButton.addEventListener('click', function() { // Listeners for the buttons
+var checkoutButton = $id('checkout-button'); // Get button element from HTML
+checkoutButton.addEventListener('click', function() { // Listener for checkout button
     if (rowsValid()) { // Check if rows are valid
         alert("Thank you! Your order will be shipped as soon as possible.");
     }
