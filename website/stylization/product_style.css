@@ -36,6 +36,8 @@
 	display: inline-block;
 	margin: 0 0 0 5%;
 	max-width: 35%;
+	min-width: 33%;
+	/*width: 322.578125px;*/
 }
 
 #productinfo h3 {

@@ -45,7 +45,8 @@ aside.empty {
 }
 
 aside.sidebar {
-	width: 96%
+	width: 96%;
+	min-width: 80%;
 }
 
 nav.sidemenu ul {
