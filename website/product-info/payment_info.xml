@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+	<product>
+		<name>A Game of Thrones</name>
+		<price>599</price>
+		<filename>agameofthrones</filename>
+	</product>
+	
+	<product>
+		<name>Chez Goth</name>
+		<price>169</price>
+		<filename>chezgoth</filename>
+	</product>
+	
+	<product>
+		<name>Chupacabra</name>
+		<price>169</price>
+		<filename>chupacabra</filename>
+	</product>
+	
+	<product>
+		<name>Claustrophobia</name>
+		<price>552</price>
+		<filename>claustrophobia</filename>
+	</product>
+	
+	<product>
+		<name>Dungeon Lords</name>
+		<price>509</price>
+		<filename>dungeonlords</filename>
+	</product>
+	
+	<product>
+		<name>Firefly</name>
+		<price>424</price>
+		<filename>firefly</filename>
+	</product>
+	
+	<product>
+		<name>Junta!</name>
+		<price>424</price>
+		<filename>junta!</filename>
+	</product>
+
+	<product>
+		<name>Ticket to Ride Anniversary</name>
+		<price>679</price>
+		<filename>tickettorideanniversary</filename>
+	</product>
+
+	<product>
+		<name>Ticket to Ride</name>
+		<price>365</price>
+		<filename></filename>
+	</product>
+
+	<product>
+		<name>Enigma</name>
+		<price>382</price>
+		<filename>enigma</filename>
+	</product>
+
+	<product>
+		<name>Monopoly World of Warcraft</name>
+		<price>424</price>
+		<filename>monopolyworldofwarcraft</filename>
+	</product>
+
+	<product>
+		<name>Monopoly Doctor Who</name>
+		<price>382</price>
+		<filename>monopolydoctorwho</filename>
+	</product>
+
+	<product>
+		<name>The Rivals for Catan</name>
+		<price>144</price>
+		<filename>therivalsforcatan</filename>
+	</product>
+
+	<product>
+		<name>Carassonne</name>
+		<price>297</price>
+		<filename>carassonne</filename>
+	</product>
+
+	<product>
+		<name>Star of Africa</name>
+		<price>212</price>
+		<filename>starofafrica</filename>
+	</product>
+
+	<product>
+		<name>5 Second Rule</name>
+		<price>339</price>
+		<filename>5secondrule</filename>
+	</product>
+
+	<product>
+		<name>Mage Wars</name>
+		<price>509</price>
+		<filename>magewars</filename>
+	</product>
+
+	<product>
+		<name>Star Wars the Card Game</name>
+		<price>339</price>
+		<filename>starwarsthecardgame</filename>
+	</product>
+</products>
