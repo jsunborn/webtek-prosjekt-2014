@@ -3,108 +3,108 @@
 	<product>
 		<name>A Game of Thrones</name>
 		<price>599</price>
-		<location>../products/agameofthrones.html</location>
+		<filename>agameofthrones</filename>
 	</product>
 	
 	<product>
 		<name>Chez Goth</name>
 		<price>169</price>
-		<location>../products/chezgoth.html</location>
+		<filename>chezgoth</filename>
 	</product>
 	
 	<product>
 		<name>Chupacabra</name>
 		<price>169</price>
-		<location>../products/chupacabra.html</location>
+		<filename>chupacabra</filename>
 	</product>
 	
 	<product>
 		<name>Claustrophobia</name>
 		<price>552</price>
-		<location>../products/claustrophobia.html</location>
+		<filename>claustrophobia</filename>
 	</product>
 	
 	<product>
 		<name>Dungeon Lords</name>
 		<price>509</price>
-		<location>../products/dungeonlords.html</location>
+		<filename>dungeonlords</filename>
 	</product>
 	
 	<product>
 		<name>Firefly</name>
 		<price>424</price>
-		<location>../products/firefly.html</location>
+		<filename>firefly</filename>
 	</product>
 	
 	<product>
 		<name>Junta!</name>
 		<price>424</price>
-		<location>../products/junta!.html</location>
+		<filename>junta!</filename>
 	</product>
 
 	<product>
 		<name>Ticket to Ride Anniversary</name>
 		<price>679</price>
-		<location>../products/tickettorideanniversary.html</location>
+		<filename>tickettorideanniversary</filename>
 	</product>
 
 	<product>
 		<name>Ticket to Ride</name>
 		<price>365</price>
-		<location>../products/.html</location>
+		<filename></filename>
 	</product>
 
 	<product>
 		<name>Enigma</name>
 		<price>382</price>
-		<location>../products/enigma.html</location>
+		<filename>enigma</filename>
 	</product>
 
 	<product>
 		<name>Monopoly World of Warcraft</name>
 		<price>424</price>
-		<location>../products/monopolyworldofwarcraft.html</location>
+		<filename>monopolyworldofwarcraft</filename>
 	</product>
 
 	<product>
 		<name>Monopoly Doctor Who</name>
 		<price>382</price>
-		<location>../products/monopolydoctorwho.html</location>
+		<filename>monopolydoctorwho</filename>
 	</product>
 
 	<product>
 		<name>The Rivals for Catan</name>
 		<price>144</price>
-		<location>../products/therivalsforcatan.html</location>
+		<filename>therivalsforcatan</filename>
 	</product>
 
 	<product>
 		<name>Carassonne</name>
 		<price>297</price>
-		<location>../products/carassonne.html</location>
+		<filename>carassonne</filename>
 	</product>
 
 	<product>
 		<name>Star of Africa</name>
 		<price>212</price>
-		<location>../products/starofafrica.html</location>
+		<filename>starofafrica</filename>
 	</product>
 
 	<product>
 		<name>5 Second Rule</name>
 		<price>339</price>
-		<location>../products/5secondrule.html</location>
+		<filename>5secondrule</filename>
 	</product>
 
 	<product>
 		<name>Mage Wars</name>
 		<price>509</price>
-		<location>../products/magewars.html</location>
+		<filename>magewars</filename>
 	</product>
 
 	<product>
 		<name>Star Wars the Card Game</name>
 		<price>339</price>
-		<location>../products/starwarsthecardgame.html</location>
+		<filename>starwarsthecardgame</filename>
 	</product>
 </products>

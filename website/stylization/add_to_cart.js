@@ -58,10 +58,25 @@ var AddToCart = (function() {
 		console.log(price);
 	}
 	*/
+
+	/*
+	var getLowerCaseName = function(productName) {
+		var products = payment_info.getElementsByTagName("name");
+		for (product in products) {
+			if (product.innerHTML == productName) {
+				return product.parentNode.getElementsByTagName("filename")[0].innerHTML;
+			}
+		}
+		return "";
+	}
+	*/
 	
 	var addProduct = function() {
 		var product = getProductName();
 		var num = 1;
+		/*
+		var productnamelowercase = getLowerCaseName(product);
+		*/
 		if (product != "") {
 			product = product.split(stringsplit);
 			if (sessionStorage.getItem((identifier+product[0])) === null) {
@@ -71,6 +86,11 @@ var AddToCart = (function() {
 				product = sessionStorage.getItem((identifier+product[0])).split(stringsplit);
 				product[1] = parseInt(product[1]) + 1;
 			}
+			/*
+			if (sessionStorage.getItem((identifier+product[0])) === null) {
+				product.push(productnamelowercase);
+			}
+			*/
 			sessionStorage.setItem((identifier+product[0]), product);
 		}
 		/*
