@@ -26,11 +26,13 @@ $(document).ready(function() {
 		                sticky.css('position','fixed');
 		                sticky.css('top','0px');
 						stickyList.css('max-width',stickyWidth);
+						sticky.css('width','24%');
 		            }
 				var stopHeight = catcher.offset().top + catcher.height();
 					if ( stopHeight > sticky.offset().top) {
 		                sticky.css('position','absolute');
 		                sticky.css('top',stopHeight);
+						sticky.css('width','24%');
 		            }
 		        });
 		    });

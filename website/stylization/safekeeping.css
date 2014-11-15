@@ -63,15 +63,8 @@ nav.sidemenu ul li {
 	font-size: 1.3em;
 }
 
-
 nav.sidemenu ul :hover {
 	background-color: #89C765;
-}
-nav.productcategory < ul :hover{
-	background-color: transparent;
-}
-nav.productcategory ul :hover {
-	background-color: #63a33e;
 }
 
 nav.sidemenu ul li a {
@@ -110,6 +103,13 @@ footer {
 footer p {
 	padding-top: 10px;
 }
+#noHoverEffect{
+	background-color: transparent;
+}
+
+nav.noHover li:hover{
+	background-color: transparent;
+}
 nav.productcategory ul li {
 	position: relative;
 	width: 50%;
@@ -121,5 +121,12 @@ nav.productcategory ul li {
 	font-size: 80%;
 	left: 35%;
 }
-/*  */
 
+nav.productcategory ul :hover {
+	background-color: #63a33e;
+}
+
+nav.productcategory ul li a {
+	display: block;
+	text-align: center;
+}
