@@ -42,6 +42,10 @@ h1, h2, h3, h4, h5, h6 {
 	height: 100%;
 }
 
+.center {
+	text-align: center;
+}
+
 aside.empty {
 	width: 25%;
 	background-color: #9EBF6D;
@@ -111,4 +115,43 @@ footer {
 
 footer p {
 	padding-top: 10px;
+}
+
+td {
+	padding: 5px;
+}
+
+.shopping-cart {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#shopping-cart-table {
+	width: 100%;
+	border: 1px solid black;
+	background-color: #9EBF6D;
+}
+
+#shopping-cart-table img {
+	max-width: 70px;
+	max-height: 70px;
+}
+
+.name-column {
+	width: 60%;
+}
+
+.display-message {
+	font-style: italic;
+}
+
+#update-button {
+	width: 80px;
+	font-size: 1.2em;
+	margin-right: 50px;
+}
+
+#checkout-button {
+	width: 80px;
+	font-size: 1.2em;
 }
