@@ -45,8 +45,13 @@ aside.empty {
 }
 
 aside.sidebar {
-	width: 96%;
-	min-width: 80%;
+	margin-right: 0px;
+	width: 100%;
+	/*min-width: 80%;*/
+}
+
+nav.sidemenu {
+	width: 100%;
 }
 
 nav.sidemenu ul {
