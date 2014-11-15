@@ -9,7 +9,6 @@ var messageText = document.createTextNode("");
 messageElement.appendChild(messageText);
 
 // Misc. variables
-var PRODUCT_MAX_AMOUNT = 10; // Max amount pr. products
 var identifier = "WEBTEKBOARD"; // Identifier for the session storage
 var numberOfItemsInCart = 0; // Variable that holds number of distinct items in cart
 var totalSum = 0;
@@ -168,11 +167,6 @@ function rowsValid() {
         }
         else if (amount.value < 0) { // Amount smaller than zero
             printMessage("Product amount must be greater than 0.", "red");
-            isValid = false;
-            break;
-        }
-        else if (amount.value > PRODUCT_MAX_AMOUNT) { // Amount higher than max amount
-            printMessage("Maximum product amount is " + PRODUCT_MAX_AMOUNT + ".", "red");
             isValid = false;
             break;
         }
