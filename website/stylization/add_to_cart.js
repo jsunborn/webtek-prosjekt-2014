@@ -3,8 +3,8 @@ var AddToCart = (function() {
 	function $tag(x) {return document.getElementsByTagName(x);}
 	var identifier = "WEBTEKBOARD:";
 	var stringsplit = ',';
-	
-	/*
+
+
 	function loadXMLDoc(filename) {
 		var xhttp;
 		if (window.XMLHttpRequest) {
@@ -17,10 +17,10 @@ var AddToCart = (function() {
 		xhttp.send();
 		return xhttp.responseXML;
 	}
-	
+
 	var payment_info = loadXMLDoc("../product-info/payment_info.xml");
-	*/
-	
+
+
 	var getProductName = function() {
 		var metas = $tag("meta");
 		for(var i=0; i<metas.length; i++) {
@@ -30,12 +30,12 @@ var AddToCart = (function() {
 		}
 		return "";
 	}
-	
-	/*
+
+
 	var calculateTotalSum = function() {
 		var price = 0;
 		var products = payment_info.getElementsByTagName("name");
-		
+
 		// Loop over all products in storage
 		for(var i=0; i<sessionStorage.length; i++) {
 			// Get one product
@@ -55,28 +55,23 @@ var AddToCart = (function() {
 				}
 			}
 		}
-		console.log(price);
 	}
-	*/
 
-	/*
 	var getLowerCaseName = function(productName) {
 		var products = payment_info.getElementsByTagName("name");
-		for (product in products) {
-			if (product.innerHTML == productName) {
-				return product.parentNode.getElementsByTagName("filename")[0].innerHTML;
+		for (var i=0; i<products.length; i++) {
+			if (products[i].innerHTML == productName) {
+				return products[i].parentNode.getElementsByTagName("filename")[0].innerHTML;
 			}
 		}
 		return "";
 	}
-	*/
-	
+
+
 	var addProduct = function() {
 		var product = getProductName();
 		var num = 1;
-		/*
-		var productnamelowercase = getLowerCaseName(product);
-		*/
+
 		if (product != "") {
 			product = product.split(stringsplit);
 			if (sessionStorage.getItem((identifier+product[0])) === null) {
@@ -86,22 +81,24 @@ var AddToCart = (function() {
 				product = sessionStorage.getItem((identifier+product[0])).split(stringsplit);
 				product[1] = parseInt(product[1]) + 1;
 			}
-			/*
+
+			var productnamelowercase = getLowerCaseName(product[0]);
+
 			if (sessionStorage.getItem((identifier+product[0])) === null) {
 				product.push(productnamelowercase);
 			}
-			*/
+
 			sessionStorage.setItem((identifier+product[0]), product);
 		}
-		/*
+
 		calculateTotalSum();
-		*/
+
 	}
-	
+
 	return {
 		init: function() {
 			var addButton = $id("addproduct");
-			
+
 			addButton.addEventListener("click", function() {
 				addProduct();
 			});

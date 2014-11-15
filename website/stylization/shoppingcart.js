@@ -33,14 +33,20 @@ for (var name in sessionStorage) { // Iterate all items in sessionStorage
         tableRow.appendChild(tableData3);
         tableRow.appendChild(tableData4);
 
+        var imageLink = document.createElement("a");
+        imageLink.href = getProductLink(product);
         var image = document.createElement("img");
-        image.src = "../images/agameofthrones.jpg"; // TODO Get correct image path for every product
+        image.src = getProductImagePath(product);
         image.title = getProductName(product);
-        tableData1.appendChild(image);
+        imageLink.appendChild(image);
+        tableData1.appendChild(imageLink);
 
-        var text = document.createTextNode(getProductName(product));
+        var textLink = document.createElement("a");
+        textLink.href = getProductLink(product);
+        var textNode = document.createTextNode(getProductName(product));
         tableData2.className = "name-column";
-        tableData2.appendChild(text);
+        textLink.appendChild(textNode)
+        tableData2.appendChild(textLink);
 
         var itemAmount = document.createElement("input");
         itemAmount.type = "text";
@@ -93,14 +99,45 @@ function getProductAmount(product) {
     return product[1];
 }
 
+function getProductImagePath(product) {
+    return "../images/" + product[2] + ".jpg";
+}
+
+function getProductLink(product) {
+    return "../products/" + product[2] + ".html";
+}
+
 function getProductPrice(product) {
-    return 499; // TODO Get product price from XML
+    function loadXMLDoc(filename) {
+        var xhttp;
+        if (window.XMLHttpRequest) {
+            xhttp=new XMLHttpRequest();
+        }
+        else { // IE5 and IE6
+            xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.open("GET",filename,false);
+        xhttp.send();
+        return xhttp.responseXML;
+    }
+
+    var payment_info = loadXMLDoc("../product-info/payment_info.xml");
+    var productsNamesFromXML = payment_info.getElementsByTagName("name");
+
+    for(i = 0; i < productsNamesFromXML.length; i++) {
+        if (productsNamesFromXML[i].innerHTML == getProductName(product)) {
+            return productsNamesFromXML[i].parentNode.getElementsByTagName("price")[0].innerHTML;
+        }
+    }
 }
 
 // If shopping cart is empty, display message
 function isCartEmpty() {
     if (numberOfItemsInCart == 0) {
         printMessage("Shopping cart is empty.", "black");
+        if (table.getElementsByTagName("tr")[0]) { // Remove total sum row if exists
+            table.removeChild(table.getElementsByTagName("tr")[0]);
+        }
         return true;
     }
     return false;
@@ -149,9 +186,9 @@ function rowsValid() {
 function updateRows() { // Update rows in shopping cart
     if (numberOfItemsInCart > 0) {
         var rows = table.getElementsByTagName('tr');
-        var rowCount = rows.length - 1; // Exclude last row, which contains sum etc.
+        var rowCount = rows.length;
 
-        for (i = 0; i < rowCount; i++) {
+        for (i = 0; i < rowCount - 1; i++) { // Iterate rows except last row, which contains sum etc.
             var row = rows[i]
             var amount = row.getElementsByTagName('input')[0];
 
@@ -164,7 +201,8 @@ function updateRows() { // Update rows in shopping cart
                 printMessage("Product was removed.", "green");
             }
             else {
-                sessionStorage.setItem((identifier + ":" + amount.name), (amount.name + "," + amount.value));
+                var oldSession = sessionStorage.getItem(identifier + ":" + amount.name).split(",");
+                sessionStorage.setItem((identifier + ":" + amount.name), (amount.name + "," + amount.value + "," + oldSession[2]));
                 printMessage("Product amount was changed.", "green");
             }
         }
@@ -181,9 +219,9 @@ function updatePrices() { // Update product prices and total sum
     var rowCount = rows.length; // Exclude last row, which contains sum etc.
 
     for (i = 0; i < rowCount - 1; i++) { // Iterate through rows, except last row, which displays total sum
-        var row = rows[i]
+        var row = rows[i];
         var amount = row.getElementsByTagName('input')[0];
-        var product = [row.getElementsByTagName('td')[1].childNodes[0].nodeValue, amount.value];
+        var product = [row.getElementsByTagName('a')[1].childNodes[0].nodeValue, amount.value];
         var productSumNode = row.getElementsByTagName('td')[3].childNodes[0];
 
         var productSumNew = getProductAmount(product) * getProductPrice(product); // Calculate product sum
@@ -200,15 +238,18 @@ function updatePrices() { // Update product prices and total sum
 // Event listeners
 var updateButton = $id('update-button'); // Get button element from HTML
 updateButton.addEventListener('click', function() { // Listener for update button
-    if (rowsValid()) { // Check if rows are valid
+    if (! isCartEmpty() && rowsValid()) { // Check if rows are valid
         updateRows(); // Update rows
     }
 })
 
 var checkoutButton = $id('checkout-button'); // Get button element from HTML
 checkoutButton.addEventListener('click', function() { // Listener for checkout button
-    if (rowsValid()) { // Check if rows are valid
+    if (! isCartEmpty() && rowsValid()) { // Check if rows are valid
         alert("Thank you! Your order will be shipped as soon as possible.");
+    }
+    else if (isCartEmpty()) {
+        alert("Shopping cart is empty.");
     }
     else {
         alert("Please correct errors before checking out.")
