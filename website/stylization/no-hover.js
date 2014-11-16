@@ -24,32 +24,58 @@ function getElementsByClass(node, classname){
 }
 
 function main(){
-	/* var t = console.log(getElementsByClass(document, "noHover"));
-	if (t){
-		n = t.lenght;
+	var t = getElementsByClass(document, "noHover"),
+	li = [],
+	newLi = [];
 
-		for (var i = 0; i < n; i ++){
-			console.log(t[i])
+
+		
+	for (x = 0, y = t.length; x < y; x ++)
+		li.push(t[x].getElementsByTagName("li"))
+	li = li[0]
+	for (x = 0,z =li.length; x < z; x ++){
+		li[x].onmouseover = function (){onMouse()};
+		li[x].onmouseout = function (){offMouse()};
 		}
-	}	
-	console.log(t) */
-	console.log("start")
-	var x = document.getElementsByTagName("a");
-	t = x.lenght;
-	console.log(t)
-	console.log(x[21])
-	console.log(x)
+}
 
-	for (t in x);
-		console.log(t)
+function onMouse(){
+	t = event.target
+	if (t.id == "doubleH1" || t.id == "doubleH2"){
+		document.getElementById("fillAll").style.backgroundColor = "#89C765"
+			}
+	else if (t.nodeName.toLowerCase() == "a"){
+		t.parentNode.style.backgroundColor = "#89C765"
+		t.style.backgroundColor = "#89C765"
+	}
+}
 
+/* t.parentNode.nodeName.toLowerCase()*/
 
-	/*
+function offMouse(){
+	t = event.target
+	if (t.id == "doubleH1" || t.id == "doubleH2"){
+		document.getElementById("fillAll").style.backgroundColor = "#9EBF6D"
+		}	
+	else if (t.nodeName.toLowerCase() == "a"){
+		t.parentNode.style.backgroundColor = "#9EBF6D"
+		t.style.backgroundColor = "#9EBF6D"
+	}
+	
+}
+
+	/*	
+
+	console.log(t) 
+	console.log("jalla");
+	var t = document.getElementsByTagName("a");
+	console.log(t);
+	console.log(t.length);
 	for (var i = 0; i < t; i ++){
 			console.log(t[i].lenght)
 		}
 
 */
-}
+
 
 window.addEventListener("Load", main())

@@ -6,7 +6,6 @@
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
 		<link rel="stylesheet" href="../stylization/main_style.css">
 		<title>Products</title>
-		<script src="../stylization/no-hover.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../stylization/scroll_style.js"></script>
 	</head>
@@ -19,22 +18,19 @@
 
 		<aside class="empty">
 			<aside class="sidebar">
-				<nav class="sidemenu">
-					<ul>
+				<nav class="sidemenu noHover">
+					<ul id = "double1">
 						<li><a href="../home/index.html">Home</a></li>
-						<li><a href="../home/products.html">Products </a>
-						<nav class="productcategory ">
-							<ul id = "noHover">
+						<li id = "fillAll" ><a href="../home/products.html" id="doubleH1">Products </a>
+						<nav class="productcategory">
+							<ul id ="doubleH2">
 								<li><a href="classic-index.html">Classics </a> </li>
 								<li><a href="family-index.html">Family </a> </li>
 								<li><a href="party-index.html"> Party games </a> </li>
 								<li><a href="quiz-index.html">Quiz </a> </li>
 								<li><a href="strategy-index.html">Strategy </a> </li>
 							</ul>
-						</nav>
-
-						</a></li>
-
+						</nav></li>
 						<li><a href="../company_information/contact_us.html">Contact Us</a></li>
 						<li><a href="../company_information/site_info.html">Information</a></li>
 						<li><a href="../company_information/tou.html">Terms of Use</a></li>
@@ -51,5 +47,6 @@
 		<footer>
 			<p>&copy; 2014 - BOARD</p>
 		</footer>
+		<script src="../stylization/no-hover.js"></script>
 	</body>
 </html>

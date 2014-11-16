@@ -64,14 +64,10 @@ nav.sidemenu ul li {
 }
 
 
-nav.sidemenu ul :hover {
-	background-color: #89C765;
-}
-nav.productcategory < ul :hover{
-	background-color: transparent;
-}
-nav.productcategory ul :hover {
-	background-color: #63a33e;
+
+
+nav.productcategory li {
+	background-color: #9EBF6D;
 }
 
 nav.sidemenu ul li a {
