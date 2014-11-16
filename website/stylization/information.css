@@ -1,3 +1,23 @@
+.mainsection a:link {
+	color: blue;
+}
+.mainsection a:visited {
+	color: purple;
+}
+.mainsection a:hover {
+	color: red;
+}
+
+.mainsection h3 {
+	font-size: 1.9em;
+	font-family: "Amaranth", "Comic Sans", sans-serif;
+	margin-top: 20px;
+}
+
+.mainsection p, .mainsection a {
+	font-family: "Voltaire", sans-serif;
+}
+
 .leftside {
 	width: 46%;
 	float: left;
@@ -19,4 +39,12 @@
 
 ul {
 	list-style-type: none;
+}
+
+#imagereferences li {
+	margin-bottom: 8px;
+}
+#imagereferences p {
+	margin: 0 0 0 0;
+	text-indent: 20px;
 }
