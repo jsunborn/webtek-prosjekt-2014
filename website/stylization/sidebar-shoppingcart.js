@@ -66,33 +66,55 @@ function isProductValid(product) {
 
 function updateCart() {
     totalSum = 0;
-    numberOfItemsInCart = 0;
 
-    for (var name in sessionStorage) { // Iterate all items in sessionStorage
+    if (numberOfItemsInCart == 0) {
+        for (var name in sessionStorage) { // Iterate all items in sessionStorage
 
-        // Add valid items to shopping cart
-        if (name.substring(0, identifier.length) == identifier) {
-            var product = sessionStorage.getItem(name).split(","); // Split string by commas
+            // Add valid items to shopping cart
+            if (name.substring(0, identifier.length) == identifier) {
+                var product = sessionStorage.getItem(name).split(","); // Split string by commas
 
-            if (isProductValid(product)) { // Check if product is valid
-                var productSum = getProductAmount(product) * getProductPrice(product);
-                totalSum += productSum;
+                if (isProductValid(product)) { // Check if product is valid
+                    var productSum = getProductAmount(product) * getProductPrice(product);
+                    totalSum += productSum;
 
-                numberOfItemsInCart = parseInt(numberOfItemsInCart) + parseInt(getProductAmount(product)); // Advance number of items in cart by 1
+                    numberOfItemsInCart = parseInt(numberOfItemsInCart) + parseInt(getProductAmount(product)); // Advance number of items in cart by 1
+                }
             }
         }
-    }
 
-    var totalSumNode = sidebarCart.childNodes[0];
-
-    if (numberOfItemsInCart == 1) {
-        totalSumNode.nodeValue = numberOfItemsInCart + " item: " + totalSum + ",-";
-    }
-    else if (numberOfItemsInCart > 1) {
-        totalSumNode.nodeValue = numberOfItemsInCart + " items: " + totalSum + ",-";
+        var totalSumNode = document.createTextNode(numberOfItemsInCart + " item: " + totalSum + ",-");
+        sidebarCart.appendChild(totalSumNode);
     }
     else {
-        totalSumNode.nodeValue = "";
+        numberOfItemsInCart = 0;
+
+        for (var name in sessionStorage) { // Iterate all items in sessionStorage
+
+            // Add valid items to shopping cart
+            if (name.substring(0, identifier.length) == identifier) {
+                var product = sessionStorage.getItem(name).split(","); // Split string by commas
+
+                if (isProductValid(product)) { // Check if product is valid
+                    var productSum = getProductAmount(product) * getProductPrice(product);
+                    totalSum += productSum;
+
+                    numberOfItemsInCart = parseInt(numberOfItemsInCart) + parseInt(getProductAmount(product)); // Advance number of items in cart by 1
+                }
+            }
+        }
+
+        var totalSumNode = sidebarCart.childNodes[0];
+
+        if (numberOfItemsInCart == 1) {
+            totalSumNode.nodeValue = numberOfItemsInCart + " item: " + totalSum + ",-";
+        }
+        else if (numberOfItemsInCart > 1) {
+            totalSumNode.nodeValue = numberOfItemsInCart + " items: " + totalSum + ",-";
+        }
+        else {
+            totalSumNode.nodeValue = "";
+        }
     }
 }
 
