@@ -1,0 +1,22 @@
+.leftside {
+	width: 46%;
+	float: left;
+	clear: left;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.rightside {
+	width: 46%;
+	float: right;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.listheader h4 {
+	margin: 25px 0 5px 0;
+}
+
+ul {
+	list-style-type: none;
+}
