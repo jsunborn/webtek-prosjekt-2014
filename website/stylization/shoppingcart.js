@@ -13,56 +13,56 @@ var identifier = "WEBTEKBOARD"; // Identifier for the session storage
 var numberOfItemsInCart = 0; // Variable that holds number of distinct items in cart
 var totalSum = 0;
 
-// TODO javascript:sessionStorage.setItem("WEBTEKBOARD:Testspill", "Testspill,2");
-
 // Populate shopping cart from sessionStorage
 for (var name in sessionStorage) { // Iterate all items in sessionStorage
 
     // Add valid items to shopping cart with picture, name, amount and price
     if (name.substring(0, identifier.length) == identifier) {
-        var product = sessionStorage.getItem(name).split(",");
+        var product = sessionStorage.getItem(name).split(","); // Split string by commas
 
-        var tableRow = document.createElement("tr");
-        var tableData1 = document.createElement("td");
-        var tableData2 = document.createElement("td");
-        var tableData3 = document.createElement("td");
-        var tableData4 = document.createElement("td");
-        tableRow.appendChild(tableData1);
-        tableRow.appendChild(tableData2);
-        tableRow.appendChild(tableData3);
-        tableRow.appendChild(tableData4);
+        if (isProductValid(product)) { // Check if product is valid
+            var tableRow = document.createElement("tr");
+            var tableData1 = document.createElement("td");
+            var tableData2 = document.createElement("td");
+            var tableData3 = document.createElement("td");
+            var tableData4 = document.createElement("td");
+            tableRow.appendChild(tableData1);
+            tableRow.appendChild(tableData2);
+            tableRow.appendChild(tableData3);
+            tableRow.appendChild(tableData4);
 
-        var imageLink = document.createElement("a");
-        imageLink.href = getProductLink(product);
-        var image = document.createElement("img");
-        image.src = getProductImagePath(product);
-        image.title = getProductName(product);
-        imageLink.appendChild(image);
-        tableData1.appendChild(imageLink);
+            var imageLink = document.createElement("a");
+            imageLink.href = getProductLink(product);
+            var image = document.createElement("img");
+            image.src = getProductImagePath(product);
+            image.title = getProductName(product);
+            imageLink.appendChild(image);
+            tableData1.appendChild(imageLink);
 
-        var textLink = document.createElement("a");
-        textLink.href = getProductLink(product);
-        var textNode = document.createTextNode(getProductName(product));
-        tableData2.className = "name-column";
-        textLink.appendChild(textNode)
-        tableData2.appendChild(textLink);
+            var textLink = document.createElement("a");
+            textLink.href = getProductLink(product);
+            var textNode = document.createTextNode(getProductName(product));
+            tableData2.className = "name-column";
+            textLink.appendChild(textNode)
+            tableData2.appendChild(textLink);
 
-        var itemAmount = document.createElement("input");
-        itemAmount.type = "text";
-        itemAmount.id = "amount";
-        itemAmount.name = getProductName(product);
-        itemAmount.size = 10;
-        itemAmount.value = getProductAmount(product);
-        tableData3.appendChild(itemAmount);
+            var itemAmount = document.createElement("input");
+            itemAmount.type = "text";
+            itemAmount.id = "amount";
+            itemAmount.name = getProductName(product);
+            itemAmount.size = 10;
+            itemAmount.value = getProductAmount(product);
+            tableData3.appendChild(itemAmount);
 
-        var price = document.createTextNode("");
-        var productSum = getProductAmount(product) * getProductPrice(product);
-        totalSum += productSum;
-        price.nodeValue = productSum + ",-";
-        tableData4.appendChild(price);
+            var price = document.createTextNode("");
+            var productSum = getProductAmount(product) * getProductPrice(product);
+            totalSum += productSum;
+            price.nodeValue = productSum + ",-";
+            tableData4.appendChild(price);
 
-        table.appendChild(tableRow); // Finally, add tablerow to table
-        numberOfItemsInCart++; // Advance number of items in cart by 1
+            table.appendChild(tableRow); // Finally, add tablerow to table
+            numberOfItemsInCart++; // Advance number of items in cart by 1
+        }
     }
 }
 
@@ -99,7 +99,13 @@ function getProductAmount(product) {
 }
 
 function getProductImagePath(product) {
-    return "../images/" + product[2] + ".jpg";
+    var filetypes = ["jpg", "png"]; // Approved product image formats
+    for (var i = 0; i < filetypes.length; i++) {
+        if (UrlExists("../images/" + product[2] + "." + filetypes[i])) { // Does file exist?
+            return "../images/" + product[2] + "." + filetypes[i]; // If yes, return path
+        }
+    }
+    return "../images/notfound.png"; // If product image was not found, return "not found" image
 }
 
 function getProductLink(product) {
@@ -107,25 +113,12 @@ function getProductLink(product) {
 }
 
 function getProductPrice(product) {
-    function loadXMLDoc(filename) {
-        var xhttp;
-        if (window.XMLHttpRequest) {
-            xhttp=new XMLHttpRequest();
-        }
-        else { // IE5 and IE6
-            xhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xhttp.open("GET",filename,false);
-        xhttp.send();
-        return xhttp.responseXML;
-    }
+    var payment_info = loadXMLDoc("../product-info/payment_info.xml"); // Load product information from XML
+    var productsNamesFromXML = payment_info.getElementsByTagName("name"); // Get all product names
 
-    var payment_info = loadXMLDoc("../product-info/payment_info.xml");
-    var productsNamesFromXML = payment_info.getElementsByTagName("name");
-
-    for(i = 0; i < productsNamesFromXML.length; i++) {
-        if (productsNamesFromXML[i].innerHTML == getProductName(product)) {
-            return productsNamesFromXML[i].parentNode.getElementsByTagName("price")[0].innerHTML;
+    for(i = 0; i < productsNamesFromXML.length; i++) { // Loop through names
+        if (productsNamesFromXML[i].innerHTML == getProductName(product)) { // Check if name corresponds to this product
+            return productsNamesFromXML[i].parentNode.getElementsByTagName("price")[0].innerHTML; // Get parent element (product) and get the content of it's child element, price
         }
     }
 }
@@ -229,11 +222,45 @@ function updatePrices() { // Update product prices and total sum
     totalSumNodeNew.nodeValue = totalSum + ",-"; // Update total sum
 }
 
+function isProductValid(product) {
+    var payment_info = loadXMLDoc("../product-info/payment_info.xml");
+    var productsNamesFromXML = payment_info.getElementsByTagName("name");
+
+    for(i = 0; i < productsNamesFromXML.length; i++) {
+        if (productsNamesFromXML[i].innerHTML == getProductName(product)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function loadXMLDoc(filename) { // Function for opening XML-file and retrieve it's contents
+    var xhttp;
+    if (window.XMLHttpRequest) {
+        xhttp=new XMLHttpRequest();
+    }
+    else { // IE5 and IE6
+        xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.open("GET",filename,false);
+    xhttp.send();
+    return xhttp.responseXML;
+}
+
+function UrlExists(url) // Checks if url returns 404-error or not
+{
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status != 404;
+}
+
 // Event listeners
 var updateButton = $id('update-button'); // Get button element from HTML
 updateButton.addEventListener('click', function() { // Listener for update button
     if (! isCartEmpty() && rowsValid()) { // Check if rows are valid
         updateRows(); // Update rows
+        updateCart();
     }
 })
 
