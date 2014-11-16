@@ -260,6 +260,7 @@ var updateButton = $id('update-button'); // Get button element from HTML
 updateButton.addEventListener('click', function() { // Listener for update button
     if (! isCartEmpty() && rowsValid()) { // Check if rows are valid
         updateRows(); // Update rows
+        updateCart();
     }
 })
 
