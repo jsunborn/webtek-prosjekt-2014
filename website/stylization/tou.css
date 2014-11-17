@@ -1,0 +1,24 @@
+body {
+	height: 1750px;
+}
+
+.mainsection h1 {
+	font-size: 3em;
+	margin: 30px 0 10px 0;
+}
+
+.mainsection h2 {
+	margin: 0px 0 30px 0;
+}
+
+.mainsection h1, h2 {
+	font-family: "Amaranth", sans-serif;
+}
+
+.mainsection h3 {
+	text-indent: 15px;
+}
+
+.mainsection h3 p {
+	font-family: sans-serif;
+}
