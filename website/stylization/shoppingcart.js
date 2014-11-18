@@ -116,7 +116,7 @@ function getProductPrice(product) {
     var payment_info = loadXMLDoc("../product-info/payment_info.xml"); // Load product information from XML
     var productsNamesFromXML = payment_info.getElementsByTagName("name"); // Get all product names
 
-    for(i = 0; i < productsNamesFromXML.length; i++) { // Loop through names
+    for(var i = 0; i < productsNamesFromXML.length; i++) { // Loop through names
         if (productsNamesFromXML[i].innerHTML == getProductName(product)) { // Check if name corresponds to this product
             return productsNamesFromXML[i].parentNode.getElementsByTagName("price")[0].innerHTML; // Get parent element (product) and get the content of it's child element, price
         }
@@ -149,7 +149,7 @@ function rowsValid() {
     var rowCount = rows.length - 1; // Exclude last row, which contains sum etc.
     var isValid = true;
 
-    for (i = 0; i < rowCount; i++) {
+    for (var i = 0; i < rowCount; i++) {
         var row = rows[i]
         var amount = row.getElementsByTagName('input')[0];
 
@@ -175,7 +175,7 @@ function updateRows() { // Update rows in shopping cart
         var rows = table.getElementsByTagName('tr');
         var rowCount = rows.length;
 
-        for (i = 0; i < rowCount - 1; i++) { // Iterate rows except last row, which contains sum etc.
+        for (var i = 0; i < rowCount - 1; i++) { // Iterate rows except last row, which contains sum etc.
             var row = rows[i]
             var amount = row.getElementsByTagName('input')[0];
 
@@ -226,7 +226,7 @@ function isProductValid(product) {
     var payment_info = loadXMLDoc("../product-info/payment_info.xml");
     var productsNamesFromXML = payment_info.getElementsByTagName("name");
 
-    for(i = 0; i < productsNamesFromXML.length; i++) {
+    for(var i = 0; i < productsNamesFromXML.length; i++) {
         if (productsNamesFromXML[i].innerHTML == getProductName(product)) {
             return true;
         }

@@ -45,7 +45,7 @@ function getProductPrice(product) {
     var payment_info = loadXMLDoc("../product-info/payment_info.xml"); // Load product information from XML
     var productsNamesFromXML = payment_info.getElementsByTagName("name"); // Get all product names
 
-    for(i = 0; i < productsNamesFromXML.length; i++) { // Loop through names
+    for(var i = 0; i < productsNamesFromXML.length; i++) { // Loop through names
         if (productsNamesFromXML[i].innerHTML == getProductName(product)) { // Check if name corresponds to this product
             return productsNamesFromXML[i].parentNode.getElementsByTagName("price")[0].innerHTML; // Get parent element (product) and get the content of it's child element, price
         }
@@ -56,7 +56,7 @@ function isProductValid(product) {
     var payment_info = loadXMLDoc("../product-info/payment_info.xml");
     var productsNamesFromXML = payment_info.getElementsByTagName("name");
 
-    for(i = 0; i < productsNamesFromXML.length; i++) {
+    for(var i = 0; i < productsNamesFromXML.length; i++) {
         if (productsNamesFromXML[i].innerHTML == getProductName(product)) {
             return true;
         }
