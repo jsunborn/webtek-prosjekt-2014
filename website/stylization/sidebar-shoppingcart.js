@@ -79,12 +79,12 @@ function updateCart() {
                     totalSum += productSum;
 
                     numberOfItemsInCart = parseInt(numberOfItemsInCart) + parseInt(getProductAmount(product)); // Advance number of items in cart by 1
+
+                    var totalSumNode = document.createTextNode(numberOfItemsInCart + " item: " + totalSum + ",-");
+                    sidebarCart.appendChild(totalSumNode);
                 }
             }
         }
-
-        var totalSumNode = document.createTextNode(numberOfItemsInCart + " item: " + totalSum + ",-");
-        sidebarCart.appendChild(totalSumNode);
     }
     else {
         numberOfItemsInCart = 0;
