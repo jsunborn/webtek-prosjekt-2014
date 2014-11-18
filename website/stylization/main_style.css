@@ -2,6 +2,7 @@
 Green color palette:
 	Background:	#D8F1D3
 	Main:		#BAD696
+	Menu hover: #89C765
 	Aside:		#9EBF6D
 	Xtra #1:	#BBE2BC
 	Xtra #2:	#E4F1C3
@@ -108,6 +109,7 @@ a:link, a:visited {
 a:hover, a:active {
 	color: #000;
 }
+
 
 nav.productcategory ul li {
 	position: relative;

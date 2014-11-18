@@ -38,12 +38,17 @@ function main(){
 		li[x].onmouseout = function (){offMouse()};
 		}
 }
+document.getElementById("doubleH2").onclick = function(){
+	window.location="../home/products.html";
+}
 
 function onMouse(){
 	t = event.target
 	if (t.id == "doubleH1" || t.id == "doubleH2"){
+
 		document.getElementById("fillAll").style.backgroundColor = "#89C765"
-			}
+		
+	}
 	else if (t.nodeName.toLowerCase() == "a"){
 		t.parentNode.style.backgroundColor = "#89C765"
 		t.style.backgroundColor = "#89C765"
