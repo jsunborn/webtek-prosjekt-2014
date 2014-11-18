@@ -21,7 +21,7 @@ addEventListener('load', function() {
             ctx.rotate(-(Math.PI * 7/100));
 
             ctx.font='bold 50px Amaranth';
-            ctx.fillStyle = "#0000FF";
+            ctx.fillStyle = "#ff3411";
             ctx.fillText(headerText, headerTextX, headerTextY);
 
             ctx.font='bold 30px Voltaire';
