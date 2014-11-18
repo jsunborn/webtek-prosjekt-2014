@@ -77,10 +77,12 @@ nav.sidemenu ul li {
 }
 /*
 
-*/
-
 nav.sidemenu ul :hover {
 	background-color: #89C765;
+}
+*/
+nav.sidemenu li {
+	background-color: #9EBF6D;
 }
 
 nav.sidemenu ul li a {
@@ -105,6 +107,18 @@ a:link, a:visited {
 
 a:hover, a:active {
 	color: #000;
+}
+
+nav.productcategory ul li {
+	position: relative;
+	width: 50%;
+	margin: 5px 20px 8px 0px;
+	
+	border-radius: 4px;
+	padding: 4px 0px 4px 0px;
+	font-family: "Amaranth", Tahoma, Verdana, Helvetica, sans-serif;
+	font-size: 80%;
+	left: 35%;
 }
 
 footer {
