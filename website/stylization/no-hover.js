@@ -34,15 +34,12 @@ function main(){
 		li.push(t[x].getElementsByTagName("li"))
 	li = li[0]
 	for (x = 0,z =li.length; x < z; x ++){
-		li[x].onmouseover = function (){onMouse()};
-		li[x].onmouseout = function (){offMouse()};
+		li[x].onmouseover = function (event){onMouse(event)};
+		li[x].onmouseout = function (event){offMouse(event)};
 		}
 }
-document.getElementById("doubleH2").onclick = function(){
-	window.location="../home/products.html";
-}
 
-function onMouse(){
+function onMouse(event){
 	t = event.target
 	if (t.id == "doubleH1" || t.id == "doubleH2"){
 
@@ -57,7 +54,7 @@ function onMouse(){
 
 /* t.parentNode.nodeName.toLowerCase()*/
 
-function offMouse(){
+function offMouse(event){
 	t = event.target
 	if (t.id == "doubleH1" || t.id == "doubleH2"){
 		document.getElementById("fillAll").style.backgroundColor = "#9EBF6D"
