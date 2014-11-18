@@ -13,7 +13,7 @@ addEventListener('load', function() {
         var subText = "Ticket to Ride - now only 365,-";
 
         var offerImage = new Image();
-        var offerImageX = 340;
+        var offerImageX = 365;
         var offerImageY = 20;
 
         offerImage.onload = function() {
