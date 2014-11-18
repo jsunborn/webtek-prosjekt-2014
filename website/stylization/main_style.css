@@ -9,6 +9,8 @@ Green color palette:
 
 /* Font: Amaranth */
 @import url(http://fonts.googleapis.com/css?family=Amaranth);
+/* Font: Voltaire */
+@import url(http://fonts.googleapis.com/css?family=Voltaire);
 
 aside, section, footer {
 	/*
@@ -25,7 +27,7 @@ aside, section, footer {
 body {
 	min-width: 1024px;
 	max-width: 1280px;
-	height: 1000px;
+	height: 1200px;
 	background-color: #D8F1D3;
 	margin: 0 auto; /* Center website */
 }
