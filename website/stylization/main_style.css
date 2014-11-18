@@ -75,6 +75,9 @@ nav.sidemenu ul li {
 	font-family: "Amaranth", Tahoma, Verdana, Helvetica, sans-serif;
 	font-size: 1.3em;
 }
+nav.sidemenu ul :hover {
+	background-color: #89C765;
+}
 
 nav.sidemenu ul :hover {
 	background-color: #89C765;
