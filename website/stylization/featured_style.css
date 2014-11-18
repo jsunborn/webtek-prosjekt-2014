@@ -1,9 +1,10 @@
 .featured {
-	width: 100%;
+	width: 98%;
 	height: 200px;
 	text-align: center;
-	border-bottom: 1px dashed black;
+	/*border-bottom: 1px dashed black;*/
 	padding: 10px;
+	/*background-color: #D8F1D3;*/
 }
 
 .product-title {
