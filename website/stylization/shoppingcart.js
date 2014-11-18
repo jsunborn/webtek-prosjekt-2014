@@ -205,7 +205,7 @@ function updatePrices() { // Update product prices and total sum
     var rows = table.getElementsByTagName('tr');
     var rowCount = rows.length; // Exclude last row, which contains sum etc.
 
-    for (i = 0; i < rowCount - 1; i++) { // Iterate through rows, except last row, which displays total sum
+    for (var i = 0; i < rowCount - 1; i++) { // Iterate through rows, except last row, which displays total sum
         var row = rows[i];
         var amount = row.getElementsByTagName('input')[0];
         var product = [row.getElementsByTagName('a')[1].childNodes[0].nodeValue, amount.value];
@@ -260,7 +260,7 @@ var updateButton = $id('update-button'); // Get button element from HTML
 updateButton.addEventListener('click', function() { // Listener for update button
     if (! isCartEmpty() && rowsValid()) { // Check if rows are valid
         updateRows(); // Update rows
-        updateCart();
+        updateCart(); // Update sidebar cart
     }
 })
 
