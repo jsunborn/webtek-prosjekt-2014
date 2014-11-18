@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
 		<link rel="stylesheet" href="../stylization/main_style.css">
+		<link rel="stylesheet" href="../stylization/product_style.css">
+		<link rel="stylesheet" href="../stylization/featured_style.css">
 		<title>Strategy | BOARD</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../stylization/scroll_style.js"></script>
@@ -19,6 +21,7 @@
 			<aside class="sidebar">
 				<nav class="sidemenu noHover">
 					<ul>
+						<li><a href="../home/shopping_cart.html">Shopping cart<div id="sidebar-shoppingcart"></div></a></li>
 						<li><a href="../home/index.html">Home</a></li>
 						<li id = "fillAll" ><a href="../home/products.html" id="doubleH1">Products </a>
 						<nav class="productcategory">
@@ -40,12 +43,37 @@
 
 		<section class="empty">
             <section class="mainsection">
-            </section>
+				<div class ="product-left">
+					<img class ="product-image" src="../images/claustrophobia.jpg" alt = "Claustrophobia" />
+					<h3>Claustrophobia</h3>
+					<p>Claustrophobia is a miniatures-based dungeon crawl game set within the universe of Hell Dorado.</p>
+				<a href ="../products/claustrophobia.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+				<div class ="product-right">
+					<img class ="product-image" src="../images/dungeonlords.jpg" alt = "Dungeon Lords" />
+					<h3>Dungeon Lords</h3>
+					<p>As a evil dungeonlord, try to build the best dungeon out there. Hire monsters, build rooms, buy traps and defeat the do-gooders who wish to bring you down.</p>
+				<a href ="../products/dungeonlords.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+				<div class ="product-left">
+					<img class ="product-image" src="../images/firefly.png" alt = "Firefly" />
+					<h3>Firefly</h3>
+					<p>As a captain desperate for work, players are compelled to take on any job — so long as it pays.</p>
+				<a href ="../products/Firefly.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+				<div class ="product-right">
+					<img class ="product-image" src="../images/magewars.jpg" alt = "Mage Wars" />
+					<h3>Mage Wars</h3>
+					<p>What would it be like for Mages of vastly different schools and philosophies of magic to come together in an arena and fight to the death?</p>
+				<a href ="../products/magewars.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+			</section>
         </section>
 
 		<footer>
 			<p>&copy; 2014 - BOARD</p>
 		</footer>
 		<script src="../stylization/no-hover.js"></script>
+		<script src="../stylization/sidebar-shoppingcart.js"></script>
 	</body>
 </html>

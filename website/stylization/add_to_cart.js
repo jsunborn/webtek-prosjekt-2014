@@ -101,6 +101,7 @@ var AddToCart = (function() {
 
 			addButton.addEventListener("click", function() {
 				addProduct();
+				updateCart();
 			});
 		}
 	}

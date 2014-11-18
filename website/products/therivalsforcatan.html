@@ -6,7 +6,7 @@
 		<meta name="product" content="The Rivals for Catan"/>
 		<link rel="stylesheet" href="../stylization/main_style.css"/>
         <link rel="stylesheet" href="../stylization/product_style.css"/>
-		<title>BOARD | The Rivals for Catan</title>
+		<title>The Rivals for Catan | BOARD</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../stylization/scroll_style.js"></script>
 	</head>
@@ -17,10 +17,20 @@
 
 		<aside class="empty">
 			<aside class="sidebar">
-				<nav class="sidemenu">
+				<nav class="sidemenu noHover">
 					<ul>
+						<li><a href="../home/shopping_cart.html">Shopping cart<div id="sidebar-shoppingcart"></div></a></li>
 						<li><a href="../home/index.html">Home</a></li>
-						<li><a href="../home/products.html">Products</a></li>
+						<li id = "fillAll" ><a href="../home/products.html" id="doubleH1">Products </a>
+						<nav class="productcategory">
+							<ul id ="doubleH2">
+								<li><a href="classic-index.html">Classics </a> </li>
+								<li><a href="family-index.html">Family </a> </li>
+								<li><a href="party-index.html"> Party games </a> </li>
+								<li><a href="quiz-index.html">Quiz </a> </li>
+								<li><a href="strategy-index.html">Strategy </a> </li>
+							</ul>
+						</nav></li>
 						<li><a href="../company_information/contact_us.html">Contact Us</a></li>
 						<li><a href="../company_information/site_info.html">Information</a></li>
 						<li><a href="../company_information/tou.html">Terms of Use</a></li>
@@ -57,6 +67,8 @@
 		<footer>
 			<p>&copy; 2014 - BOARD</p>
 		</footer>
+		<script src="../stylization/no-hover.js"></script>
+		<script src="../stylization/sidebar-shoppingcart.js"></script>
 		<script src="../stylization/add_to_cart.js"></script>
 	</body>
 </html>

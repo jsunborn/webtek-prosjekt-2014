@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
 		<link rel="stylesheet" href="../stylization/main_style.css">
+		<link rel="stylesheet" href="../stylization/product_style.css">
+		<link rel="stylesheet" href="../stylization/featured_style.css">
 		<title>Classic | BOARD</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../stylization/scroll_style.js"></script>
@@ -19,6 +21,7 @@
 			<aside class="sidebar">
 				<nav class="sidemenu noHover">
 					<ul>
+						<li><a href="../home/shopping_cart.html">Shopping cart<div id="sidebar-shoppingcart"></div></a></li>
 						<li><a href="../home/index.html">Home</a></li>
 						<li id = "fillAll" ><a href="../home/products.html" id="doubleH1">Products </a>
 						<nav class="productcategory">
@@ -40,6 +43,32 @@
 
 		<section class="empty">
             <section class="mainsection">
+				<div class ="product-left">
+					<img class ="product-image" src="../images/starofafrica.jpg" alt = "Star of Africa" />
+					<h3>Star of Africa</h3>
+					<p>Hunt the regions of Africa for the ultimate diamond.</p>
+					<a href ="../products/starofafrica.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+				<div class ="product-right">
+					<img class ="product-image" src ="../images/monopolyworldofwarcraft.jpg" alt ="Monopoly:  World of Warcraft"/>
+					<h3>Monopoly: World of Warcraft</h3>
+					<p>Dominate the lands of Azeroth in this epic version of Monopoly.</p>
+					<a href="../products/monopolyworldofwarcraft.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+				<div class ="product-left">
+					<img class ="product-image" src="../images/monopolydoctorwho.jpg" alt = "Monopoly: Doctor Who" />
+					<h3>Monopoly: Doctor Who</h3>
+					<p>Conquer the universe of Doctor Who in this time consuming game of Monopoly.</p>
+					<a href ="../products/monopolydoctorwho.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+				<div class ="product-right">
+					<img class ="product-image" src ="../images/junta!.jpg" alt ="Junta!"/>
+					<h3>Junta!</h3>
+					<p>The goal is to amass the greatest wealth secreted away in your Swiss bank account.</p>
+					<a href="../products/junta!.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+
+
             </section>
         </section>
 
@@ -47,5 +76,6 @@
 			<p>&copy; 2014 - BOARD</p>
 		</footer>
 		<script src="../stylization/no-hover.js"></script>
+		<script src="../stylization/sidebar-shoppingcart.js"></script>
 	</body>
 </html>

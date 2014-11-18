@@ -3,7 +3,9 @@
 	<head>
         <meta charset="UTF-8">
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
-		<link rel="stylesheet" href="../stylization/main_style.css">
+		<link rel="stylesheet" href="../stylization/main_style.css">'
+		<link rel="stylesheet" href="../stylization/product_style.css">
+		<link rel="stylesheet" href="../stylization/featured_style.css">
 		<title>Party | BOARD</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../stylization/scroll_style.js"></script>
@@ -19,6 +21,7 @@
 			<aside class="sidebar">
 				<nav class="sidemenu noHover">
 					<ul>
+						<li><a href="../home/shopping_cart.html">Shopping cart<div id="sidebar-shoppingcart"></div></a></li>
 						<li><a href="../home/index.html">Home</a></li>
 						<li id = "fillAll" ><a href="../home/products.html" id="doubleH1">Products </a>
 						<nav class="productcategory">
@@ -40,6 +43,24 @@
 
 		<section class="empty">
             <section class="mainsection">
+				<div class ="product-left">
+					<img class ="product-image" src="../images/5secondrule.jpg" alt = "5 Second Rule" />
+					<h3>5 Second Rule</h3>
+					<p>It should be easy to name 3 breeds of dogs</p>
+					<a href ="../products/5secondrule.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+				<div class ="product-right">
+					<img class ="product-image" src="../images/chezgoth.jpg" alt = "Chez Goth" />
+					<h3>Chez Goth</h3>
+					<p>Angst. Nookie. Roommates. Just another Friday night at Chez Goth.</p>
+					<a href ="../products/chezgoth.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+				<div class ="product-left">
+					<img class ="product-image" src="../images/chupacabra.jpg" alt = "Chupacabra" />
+					<h3>Chupacabra</h3>
+					<p>Be the last mammal standing in this survival dice game based on Latin American folklore. </p>
+					<a href ="../products/chupacabra.html"><div class ="product-read-more">Read more</div></a>
+				</div>
             </section>
         </section>
 
@@ -47,5 +68,6 @@
 			<p>&copy; 2014 - BOARD</p>
 		</footer>
 		<script src="../stylization/no-hover.js"></script>
+		<script src="../stylization/sidebar-shoppingcart.js"></script>
 	</body>
 </html>

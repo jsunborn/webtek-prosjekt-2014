@@ -5,37 +5,37 @@
 		<price>599</price>
 		<filename>agameofthrones</filename>
 	</product>
-	
+
 	<product>
 		<name>Chez Goth</name>
 		<price>169</price>
 		<filename>chezgoth</filename>
 	</product>
-	
+
 	<product>
 		<name>Chupacabra</name>
 		<price>169</price>
 		<filename>chupacabra</filename>
 	</product>
-	
+
 	<product>
 		<name>Claustrophobia</name>
 		<price>552</price>
 		<filename>claustrophobia</filename>
 	</product>
-	
+
 	<product>
 		<name>Dungeon Lords</name>
 		<price>509</price>
 		<filename>dungeonlords</filename>
 	</product>
-	
+
 	<product>
 		<name>Firefly</name>
 		<price>424</price>
 		<filename>firefly</filename>
 	</product>
-	
+
 	<product>
 		<name>Junta!</name>
 		<price>424</price>
@@ -51,7 +51,7 @@
 	<product>
 		<name>Ticket to Ride</name>
 		<price>365</price>
-		<filename></filename>
+		<filename>tickettoride</filename>
 	</product>
 
 	<product>
