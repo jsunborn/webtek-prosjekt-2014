@@ -85,6 +85,10 @@ function updateCart() {
                 }
             }
         }
+        if (numberOfItemsInCart == 0) { // If number of items in cart is still 0, remove total sum from sidebar
+            var totalSumNode = sidebarCart.childNodes[0];
+            totalSumNode.nodeValue = "";
+        }
     }
     else {
         numberOfItemsInCart = 0;
