@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
 		<link rel="stylesheet" href="../stylization/main_style.css">
+		<link rel="stylesheet" href="../stylization/product_style.css">
+		<link rel="stylesheet" href="../stylization/featured_style.css">
 		<title>Quiz | BOARD</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../stylization/scroll_style.js"></script>
@@ -18,6 +20,7 @@
 			<aside class="sidebar">
 				<nav class="sidemenu noHover">
 					<ul>
+						<li><a href="../home/shopping_cart.html">Shopping cart<div id="sidebar-shoppingcart"></div></a></li>
 						<li><a href="../home/index.html">Home</a></li>
 						<li id = "fillAll" ><a href="../home/products.html" id="doubleH1">Products </a>
 						<nav class="productcategory">
@@ -39,12 +42,25 @@
 
 		<section class="empty">
             <section class="mainsection">
-            </section>
+				<div class ="product-left">
+					<img class ="product-image" src="../images/5secondrule.jpg" alt = "5 Second Rule" />
+					<h3>5 Second Rule</h3>
+					<p>It should be easy to name 3 breeds of dogs</p>
+					<a href ="../products/5secondrule.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+				<div class ="product-right">
+					<img class ="product-image" src="../images/enigma.jpg" alt = "Enigma" />
+					<h3>Enigma</h3>
+					<p>In Enigma, players are exploring an ancient temple, solving different problems to make their way from room to room.</p>
+					<a href ="../products/enigma.html"><div class ="product-read-more">Read more</div></a>
+				</div>
+			</section>
         </section>
 
 		<footer>
 			<p>&copy; 2014 - BOARD</p>
 		</footer>
 		<script src="../stylization/no-hover.js"></script>
+		<script src="../stylization/sidebar-shoppingcart.js"></script>
 	</body>
 </html>
