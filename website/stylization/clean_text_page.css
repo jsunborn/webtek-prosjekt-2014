@@ -22,3 +22,21 @@ body {
 .mainsection h3 p {
 	font-family: sans-serif;
 }
+
+/*----------------------------------------*/
+
+.midpage {
+	text-align: center;
+}
+
+.midpage h3 {
+	text-indent: 0px;
+}
+
+.midpage a {
+	color: black;
+}
+
+.midpage a:hover {
+	color: white;
+}
