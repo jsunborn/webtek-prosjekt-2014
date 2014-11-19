@@ -4,6 +4,7 @@ Green color palette:
 	Main:		#BAD696
 	Menu hover: #89C765
 	Aside:		#9EBF6D
+	Aside but: 	#84b140
 	Xtra #1:	#BBE2BC
 	Xtra #2:	#E4F1C3
 */
@@ -83,10 +84,15 @@ nav.sidemenu ul li {
 nav.sidemenu ul :hover {
 	background-color: #89C765;
 }
+#doubleH2 li {
+	background-color: #84b140;
+}
 */
+
 nav.sidemenu li {
 	background-color: #9EBF6D;
 }
+
 
 nav.sidemenu ul li a {
 	display: block;
@@ -122,7 +128,7 @@ nav.productcategory ul li {
 	padding: 4px 0px 4px 0px;
 	font-family: "Amaranth", Tahoma, Verdana, Helvetica, sans-serif;
 	font-size: 80%;
-	left: 35%;
+	left: 25%;
 }
 
 footer {

@@ -17,6 +17,24 @@ nav.sidemenu ul :hover {
 	font-family: "Voltaire", sans-serif;
 	font-weight: bold;
 }
+.product-navigation {
+	padding-top: 10px;
+}
+
+.product-navigation a{
+	width: 140px;
+	height: 30px;
+	color: black;
+	background-color: green;
+	border: 1px solid black;
+	border-radius: 10px;
+	text-align: center;
+	display: inline-block;
+	padding: 2px 0px 0px 0px;
+	font-size: 1.1em;
+	font-family: "Voltaire", sans-serif;
+	font-weight: bold;
+}
 
 .product-button:hover{
 	background-color: white;
