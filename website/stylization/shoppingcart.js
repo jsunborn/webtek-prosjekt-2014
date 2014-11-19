@@ -255,6 +255,81 @@ function UrlExists(url) // Checks if url returns 404-error or not
     return http.status != 404;
 }
 
+function isFormValid() {
+    var errors = [];
+
+    var name = $id('form-name');
+    var postal = $id('form-postal');
+    var city = $id('form-city');
+    var phone = $id('form-phone');
+    var email = $id('form-email');
+    var email2 = $id('form-email2');
+    var accept = $id('form-accept');
+
+    if (name.value.match(/\d+/g)) {
+        name.className = "redborder";
+        errors.push("Name cannot contain numbers");
+    }
+    var split_name = name.value.split(" "); // Split full name on spaces, to find how many there are
+    if (split_name.length < 2) { // Full name has to contain at least two names (firstname and lastname)
+        name.className = "redborder";
+        errors.push("Name has contain both given name and surname");
+    }
+    if (isNaN(postal.value) || postal.value < 0) {
+        postal.className = "redborder";
+        errors.push("Postal code should be a number between 0 and 9999");
+    }
+    if (city.value.match(/\d+/g)) {
+        city.className = "redborder";
+        errors.push("City cannot contain numbers");
+    }
+    if (isNaN(phone.value)) {
+        phone.className = "redborder";
+        errors.push("Phone number should only consist of numbers");
+    }
+    if (!email.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)) {
+        email.className = "redborder";
+        errors.push("E-mail is invalid");
+    }
+    if (!email2.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)) {
+        email2.className = "redborder";
+        errors.push("Verify e-mail is invalid");
+    }
+    if (!(email.value == email2.value)) {
+        email.className = "redborder";
+        email2.className = "redborder";
+        errors.push("E-mail addresses doesn't match");
+    }
+    if (!accept.checked) {
+        errors.push("To check out, you have to agree to the Terms of Use");
+    }
+
+    return errors;
+}
+
+function clearErrors() {
+    var name = $id('form-name');
+    var postal = $id('form-postal');
+    var city = $id('form-city');
+    var phone = $id('form-phone');
+    var email = $id('form-email');
+    var email2 = $id('form-email2');
+    var accept = $id('form-accept');
+
+    name.className = ""; // Set all input's classnames to none, to remove red border
+    postal.className = "";
+    city.className = "";
+    phone.className = "";
+    email.className = "";
+    email2.className = "";
+    accept.className = "";
+
+    var errorMsgDiv = $id('form-message');
+    while (errorMsgDiv.firstChild) { // Remove all error messages
+        errorMsgDiv.removeChild(errorMsgDiv.firstChild);
+    }
+}
+
 // Event listeners
 var updateButton = $id('update-button'); // Get button element from HTML
 updateButton.addEventListener('click', function() { // Listener for update button
@@ -267,12 +342,25 @@ updateButton.addEventListener('click', function() { // Listener for update butto
 var checkoutButton = $id('checkout-button'); // Get button element from HTML
 checkoutButton.addEventListener('click', function() { // Listener for checkout button
     if (! isCartEmpty() && rowsValid()) { // Check if rows are valid
-        alert("Thank you! Your order will be shipped as soon as possible.");
+        clearErrors(); // Clear any red error borders
+        var errors = isFormValid();
+        if (errors.length == 0) { // Check if form is valid
+            alert("Thanks! Your order will be delivered as soon as possible!");
+        }
+        else {
+            var errorMsgDiv = $id('form-message'); // Get error message div
+            for (var i = 0; i < errors.length; i++) { // Display errors
+                var errorMsgParagraph = document.createElement("li");
+                var errorMsgNode = document.createTextNode(errors[i]);
+                errorMsgParagraph.appendChild(errorMsgNode);
+                errorMsgDiv.appendChild(errorMsgParagraph);
+            }
+        }
     }
     else if (isCartEmpty()) {
-        alert("Shopping cart is empty.");
+        alert("Shopping cart is empty, cannot check out.");
     }
     else {
-        alert("Please correct errors before checking out.")
+        alert("Please correct errors in shopping cart before checking out.")
     }
-})
+});
