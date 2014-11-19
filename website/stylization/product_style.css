@@ -21,27 +21,6 @@ nav.sidemenu ul :hover {
 	width: 280px;
 }
 
-#imageandinfo button {
-	width: 140px;
-	height: 30px;
-	color: black;
-	background-color: green;
-	border: 1px solid black;
-	border-radius: 10px;
-	text-align: center;
-	display: inline-block;
-	padding: 2px 0 0 0;
-	margin: 0 5px 0 5px;
-	font-size: 1.1em;
-	font-family: "Voltaire", sans-serif;
-	font-weight: bold;
-}
-
-#imageandinfo button:hover {
-	background-color: white;
-	cursor: pointer;
-}
-
 #productinfo {
 	display: inline-block;
 	margin: 0 0 0 5%;
