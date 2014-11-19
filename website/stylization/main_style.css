@@ -117,7 +117,7 @@ nav.productcategory ul li {
 	position: relative;
 	width: 50%;
 	margin: 5px 20px 8px 0px;
-	
+
 	border-radius: 4px;
 	padding: 4px 0px 4px 0px;
 	font-family: "Amaranth", Tahoma, Verdana, Helvetica, sans-serif;
@@ -145,6 +145,11 @@ td {
 .shopping-cart {
 	width: 600px;
 	margin: 0 auto;
+}
+
+.shopping-form {
+	width: 600px;
+	margin: 50px auto;
 }
 
 #shopping-cart-table {
@@ -175,17 +180,51 @@ td {
 	width: 60%;
 }
 
-.display-message {
+#display-message {
 	font-style: italic;
+}
+
+#form-message {
+	font-style: italic;
+	color: red;
+}
+
+#form-message li {
+	margin-left: 0px;
+}
+
+.redborder {
+	border: 2px solid red;
+}
+
+div.block{
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+div.block label{
+	width: 200px;
+	display: block;
+	float: left;
+	text-align: left;
+}
+
+div.block .input{
+	margin-left: 4px;
+	float: left;
+}
+
+span.mandatory {
+	color: red;
 }
 
 #update-button {
 	width: 100px;
 	font-size: 1.2em;
-	margin-right: 50px;
 }
 
 #checkout-button {
 	width: 100px;
 	font-size: 1.2em;
+	margin-top: 10px;
 }

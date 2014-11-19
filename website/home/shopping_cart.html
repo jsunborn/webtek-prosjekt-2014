@@ -40,8 +40,53 @@
 					<br />
 					<div class="center">
 						<input type="submit" id="update-button" value="Update" />
-						<input type="submit" id="checkout-button" value="Checkout" />
 					</div>
+				</div>
+
+				<div class="shopping-form">
+					<h3>Checkout information</h3>
+					<form name="checkout-form" onsubmit="return false;">
+						<ul id="form-message"></ul>
+						<div class="block">
+							<label for="form-name">Full name<span class="mandatory">*</span></label>
+							<input type="text" id="form-name" name="form-name" size="40" maxlength="100" required />
+						</div>
+						<div class="block">
+							<label for="form-address">Address<span class="mandatory">*</span></label>
+							<input type="text" id="form-address" name="form-address" size="40" maxlength="100" required />
+						</div>
+						<div class="block">
+							<label for="form-postal">Postal code<span class="mandatory">*</span></label>
+							<input type="text" id="form-postal" name="form-postal" size="10" maxlength="4" required />
+						</div>
+						<div class="block">
+							<label for="form-city">City<span class="mandatory">*</span></label>
+							<input type="text" id="form-city" name="form-city" size="40" maxlength="100" required />
+						</div>
+						<div class="block">
+							<label for="form-phone">Phone<span class="mandatory">*</span></label>
+							<input type="text" id="form-phone" name="form-phone" size="40" maxlength="12" required />
+						</div>
+						<div class="block">
+							<label for="form-email">E-mail<span class="mandatory">*</span></label>
+							<input type="text" id="form-email" name="form-email" size="40" maxlength="100" required />
+						</div>
+						<div class="block">
+							<label for="form-email2">Verify e-mail<span class="mandatory">*</span></label>
+							<input type="text" id="form-email2" name="form-email2" size="40" maxlength="100" required />
+						</div>
+						<div class="block">
+							<label for="form-info">Additional information</label>
+							<textarea id="form-info" name="form-info" maxlength="100" rows="6" cols="29"></textarea>
+						</div>
+						<div class="block">
+							<label for="form-accept">I agree to the Terms of Use<span class="mandatory">*</span></label>
+							<input type="checkbox" id="form-accept" name="form-accept" size="40" maxlength="100" required />
+						</div>
+						<div class="center">
+							<input type="submit" id="checkout-button" value="Checkout" />
+						</div>
+					</form>
 				</div>
 			</section>
 		</section>
