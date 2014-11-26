@@ -105,7 +105,7 @@ These folders are not available for the user, but contain information and files 
 		- sidebar-shoppingcart.js
 
 ###Technical Description
-Form Controls
+**Form Controls**
 To be able to check out, the user has to fill out a form on the shopping cart page. To validate these fields, we use JavaScript to check the inputs for valid data. The function, “isFormValid()”, goes through all the fields and pushes an error to a stack if field contain an error, which finally is displayed to the user. The erroneous fields are also highlighted in red to help the user figure out what’s wrong.
 
 **CSS**
