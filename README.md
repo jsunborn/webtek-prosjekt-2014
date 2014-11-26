@@ -9,7 +9,7 @@ Although the store is not operational, i.e. you can’t actually buy anything, i
 ###Structure
 This structure is also displayed in the website’s sitemap. The choice of putting the sitemap on the “Information” page was deliberate. From personal experience, the sitemap is not used except in rare circumstances, and thus have not been given a separate page.
 
-- ####website
+- **website**
 	- **company_information**
 		- contact_us.html
 		- site_info.html
@@ -46,7 +46,7 @@ This structure is also displayed in the website’s sitemap. The choice of putti
 
 These folders are not available for the user, but contain information and files used in all or some of the sites:
 
-- ####website
+- **website**
 	- **images**
 		- 5secondrule.jpg
 		- agameofthrones.jpg
