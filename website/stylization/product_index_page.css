@@ -42,7 +42,18 @@ h2 {
 	margin-right: 10px;
 }
 
-.read-more {
+.mainsection h2, h3, a, p {
+	color: black;
+}
+.mainsection a:hover {
+	color: white;
+}
+
+button.read-more {
+	color: white;
+	font-family: serif;
+	font-weight: normal;
+	font-size: 1em;
 	width: 140px;
 	height: 30px;
 	background-color: green;
@@ -50,12 +61,8 @@ h2 {
 	border-radius: 10px;
 	text-align: center;
 	display: inline-block;
-	padding: 10px 0px 0px 0px;
 }
 
-.mainsection h2, h3, a, p {
+button.read-more:hover {
 	color: black;
-}
-.mainsection a:hover {
-	color: white;
 }

@@ -14,6 +14,10 @@ Green color palette:
 /* Font: Voltaire */
 @import url(http://fonts.googleapis.com/css?family=Voltaire);
 
+p {
+	font-family: sans-serif;
+}
+
 aside, section, footer {
 	/*
 	The following is a fix that allows you to add padding and borders,
