@@ -4,23 +4,9 @@
 nav.sidemenu ul :hover {
 }
 
-.product-button {
-	width: 140px;
-	height: 30px;
-	background-color: green;
-	border: 1px solid black;
-	border-radius: 10px;
-	text-align: center;
-	display: inline-block;
-	padding: 0px 0px 0px 0px;
-	font-size: 1.1em;
-	font-family: "Voltaire", sans-serif;
-	font-weight: bold;
-}
-
-.product-button:hover{
-	background-color: white;
-	cursor: pointer;
+.product-navigation {
+	padding-top: 10px;
+	margin: 0 5% 0 5%;
 }
 
 .quote {

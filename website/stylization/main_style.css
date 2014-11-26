@@ -4,6 +4,7 @@ Green color palette:
 	Main:		#BAD696
 	Menu hover: #89C765
 	Aside:		#9EBF6D
+	Aside but: 	#84b140
 	Xtra #1:	#BBE2BC
 	Xtra #2:	#E4F1C3
 */
@@ -78,12 +79,7 @@ nav.sidemenu ul li {
 	font-family: "Amaranth", Tahoma, Verdana, Helvetica, sans-serif;
 	font-size: 1.3em;
 }
-/*
 
-nav.sidemenu ul :hover {
-	background-color: #89C765;
-}
-*/
 nav.sidemenu li {
 	background-color: #9EBF6D;
 }
@@ -112,17 +108,46 @@ a:hover, a:active {
 	color: #000;
 }
 
+.mainsection button {
+	width: 140px;
+	height: 30px;
+	color: black;
+	background-color: green;
+	border: 1px solid black;
+	border-radius: 10px;
+	text-align: center;
+	display: inline-block;
+	padding: 2px 0 0 0;
+	margin: 0 5px 0 5px;
+	font-size: 1.1em;
+	font-family: "Voltaire", sans-serif;
+	font-weight: bold;
+}
+
+.mainsection button:hover {
+	background-color: white;
+	cursor: pointer;
+}
+
+a:link, a:visited {
+	color: #fff;
+}
+
+a:hover, a:active {
+	color: #000;
+}
+
 
 nav.productcategory ul li {
 	position: relative;
 	width: 50%;
 	margin: 5px 20px 8px 0px;
-
+	
 	border-radius: 4px;
 	padding: 4px 0px 4px 0px;
 	font-family: "Amaranth", Tahoma, Verdana, Helvetica, sans-serif;
 	font-size: 80%;
-	left: 35%;
+	left: 25%;
 }
 
 footer {

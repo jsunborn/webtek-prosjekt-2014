@@ -363,4 +363,4 @@ checkoutButton.addEventListener('click', function() { // Listener for checkout b
     else {
         alert("Please correct errors in shopping cart before checking out.")
     }
-})
+});

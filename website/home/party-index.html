@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 		<meta name="author" content="Sondre Erstad, Jørgen Sirhaug, Kristoffer Thøring">
 		<link rel="stylesheet" href="../stylization/main_style.css">
-		<link rel="stylesheet" href="../stylization/product_style.css">
+		<link rel="stylesheet" href="../stylization/product_index_page.css">
 		<link rel="stylesheet" href="../stylization/featured_style.css">
 		<title>Party | BOARD</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
@@ -23,17 +23,18 @@
 					<ul>
 						<li><a href="../home/shopping_cart.html">Shopping cart<div id="sidebar-shoppingcart"></div></a></li>
 						<li><a href="../home/index.html">Home</a></li>
-						<li id = "fillAll" ><a href="../home/products.html" id="doubleH1">Products </a>
-							<nav class="productcategory">
-								<ul id ="doubleH2">
-									<li><a href="classic-index.html">Classics </a> </li>
-									<li><a href="family-index.html">Family </a> </li>
-									<li><a href="party-index.html"> Party games </a> </li>
-									<li><a href="quiz-index.html">Quiz </a> </li>
-									<li><a href="strategy-index.html">Strategy </a> </li>
-								</ul>
-							</nav>
-						</li>
+						<li id = "fillAll" ><a href="../home/products.html" id="doubleH1">Products</a></li>
+					</ul>
+						<nav class="productcategory">
+							<ul id ="doubleH2">
+								<li><a href="../home/classic-index.html">Classics</a></li>
+								<li><a href="../home/family-index.html">Family</a></li>
+								<li><a href="../home/party-index.html"> Party games</a></li>
+								<li><a href="../home/quiz-index.html">Quiz</a></li>
+								<li><a href="../home/strategy-index.html">Strategy</a></li>
+							</ul>
+						</nav>
+					<ul>
 						<li><a href="../company_information/contact_us.html">Contact Us</a></li>
 						<li><a href="../company_information/site_info.html">Information</a></li>
 						<li><a href="../company_information/tou.html">Terms of Use</a></li>
@@ -44,23 +45,18 @@
 
 		<section class="empty">
             <section class="mainsection">
-				<div class ="product-left">
-					<img class ="product-image" src="../images/5secondrule.jpg" alt = "5 Second Rule" />
-					<h3>5 Second Rule</h3>
-					<p>It should be easy to name 3 breeds of dogs</p>
-					<a href ="../products/5secondrule.html"><div class ="product-read-more">Read more</div></a>
-				</div>
+            	<h2>Party games</h2>
 				<div class ="product-right">
 					<img class ="product-image" src="../images/chezgoth.jpg" alt = "Chez Goth" />
 					<h3>Chez Goth</h3>
+					<button class="read-more" onclick="location.href='../products/chezgoth.html'" type="button">Read more</button>
 					<p>Angst. Nookie. Roommates. Just another Friday night at Chez Goth.</p>
-					<a href ="../products/chezgoth.html"><div class ="product-read-more">Read more</div></a>
 				</div>
 				<div class ="product-left">
 					<img class ="product-image" src="../images/chupacabra.jpg" alt = "Chupacabra" />
 					<h3>Chupacabra</h3>
+					<button class="read-more" onclick="location.href='../products/chupacabra.html'" type="button">Read more</button>
 					<p>Be the last mammal standing in this survival dice game based on Latin American folklore. </p>
-					<a href ="../products/chupacabra.html"><div class ="product-read-more">Read more</div></a>
 				</div>
             </section>
         </section>
