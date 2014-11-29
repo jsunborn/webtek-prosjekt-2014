@@ -79,7 +79,7 @@ function updateCart() {
                     var productSum = getProductAmount(product) * getProductPrice(product);
                     totalSum += productSum;
 
-                    numberOfItemsInCart = parseInt(numberOfItemsInCart) + parseInt(getProductAmount(product)); // Advance number of items in cart by 1
+                    numberOfItemsInCart += parseInt(getProductAmount(product)); // Advance number of items in cart by 1
 
                     var totalSumNode = document.createTextNode(numberOfItemsInCart + " item: " + totalSum + ",-");
                     sidebarCart.appendChild(totalSumNode);
@@ -87,9 +87,7 @@ function updateCart() {
             }
         }
         if (numberOfItemsInCart == 0) { // If number of items in cart is still 0, remove total sum from sidebar
-            //var totalSumNode = sidebarCart.childNodes[0];
-            //totalSumNode.nodeValue = "";
-            sidebarCart.childNodes[0] = '';
+            sidebarCart.childNodes[0].nodeValue = '';
         }
     }
     else {

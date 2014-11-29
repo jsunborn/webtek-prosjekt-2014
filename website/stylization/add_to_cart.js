@@ -25,11 +25,9 @@ var AddToCart = (function() {
 		var metas = $tag("meta");
 		for(var i=0; i<metas.length; i++) {
 			if (metas[i].getAttribute("name") == "product") {
-				console.log(metas[i].getAttribute("content"));
 				return metas[i].getAttribute("content");
 			}
 		}
-		console.log("*noname*");
 		return "";
 	}
 
@@ -50,7 +48,6 @@ var AddToCart = (function() {
 					// If (when) they match, get price and multiply by number of products
 					var insideElement = products[i].textContent || products[i].innerText;
 					if(insideElement == product[0]) {
-						console.log(product);
 						var prodPrice = products[i].parentNode.getElementsByTagName("price")[0].textContent
 						|| products[i].parentNode.getElementsByTagName("price")[0].innerText;
 						price += (prodPrice * product[1])
@@ -64,9 +61,6 @@ var AddToCart = (function() {
 	var getLowerCaseName = function(productName) {
 		var products = payment_info.getElementsByTagName("name");
 		for (var i=0; i<products.length; i++) {
-			console.log(products[i]);
-			console.log(products[i].textContent || products[i].innerText);
-			console.log("*-*-*ijebg*-*-*");
 			var insideElement = products[i].textContent || products[i].innerText;
 			if (insideElement == productName) {
 				return products[i].parentNode.getElementsByTagName("filename")[0].textContent
@@ -91,7 +85,6 @@ var AddToCart = (function() {
 				product[1] = parseInt(product[1]) + 1;
 			}
 
-			console.log("In addproduct, before getLowerCaseName()" + product[0]);
 			var productnamelowercase = getLowerCaseName(product[0]);
 
 			if (sessionStorage.getItem((identifier+product[0])) === null) {
