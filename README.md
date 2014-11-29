@@ -122,6 +122,8 @@ When we started creating this website, we decided quite early that it would be b
 As with the .css-files, all .js-files are located in “/stylization/”. These files help to make the side-menu follow the page up and down when the user scrolls, and to manage everything that happens related to the shopping cart, e.g. adding and removing products, and calculating the total price on the fly.
 If JavaScript get disabled, the site itself will work perfectly. The side-menu will not be as cool and glorious as it is now, but it will be functional. The only drawback is that the user can’t do any shopping, but it’s still possible to browse our stock and read the excellent descriptions.
 
+We kept to standard JavaScript, but implemented jQuery for one purpose: to get the menu's scroll effect to work as it should. We found some demo code online written in jQuery, and it was much easier to implement it "as is" rather than translate it to pure JavaScript.
+
 **Multimedia**
 
 We also decided to make an animation on the front page of our store, which highlightens a product that allegedly is rebated. To do this we made a canvas in our HTML code, which is then used through JavaScript to display the animation. This was done by using the “setInterval()” method, which draws one by one frame each 20ms. To make the shadow of the product image cycle through different colors, we used “hsl()” (hue, saturation, lightness), because it allows smooth transitions by simply iterating through 0-359 in the “hue” part. The text was also rotated, to give it a fancy look.
@@ -129,3 +131,5 @@ We also decided to make an animation on the front page of our store, which highl
 **Additional Comments**
 
 During our project we learned about the term web safe colors, but chose to ignore it altogether. Web safe colours was primarily needed on older computers which only could display a very limited set of colors. On modern devices (even cellphones) this is no longer a general concern that needs special attention, so we discarded the concept.
+
+We met a (destructible) wall with .innerHTML and Opera. The "innerHTML" function is not standarized by W3, and is thus implemented differently in the popular web browsers. Near the end of our project, we discovered that Opera was the only browser that wouldn't cooperate with us when working with our .xml-file. Switching out all instances of "x.innerHTML" with "x.textContent || x.innerText" solved this problem.
