@@ -25,9 +25,11 @@ var AddToCart = (function() {
 		var metas = $tag("meta");
 		for(var i=0; i<metas.length; i++) {
 			if (metas[i].getAttribute("name") == "product") {
+				console.log(metas[i].getAttribute("content"));
 				return metas[i].getAttribute("content");
 			}
 		}
+		console.log("*noname*");
 		return "";
 	}
 
@@ -46,9 +48,11 @@ var AddToCart = (function() {
 				// Loop over all products in xml-file
 				for(var j=0; j<products.length; j++) {
 					// If (when) they match, get price and multiply by number of products
-					if(products[i].innerHTML == product[0]) {
+					var insideElement = products[i].textContent || products[i].innerText;
+					if(insideElement == product[0]) {
 						console.log(product);
-						var prodPrice = products[i].parentNode.getElementsByTagName("price")[0].innerHTML;
+						var prodPrice = products[i].parentNode.getElementsByTagName("price")[0].textContent
+						|| products[i].parentNode.getElementsByTagName("price")[0].innerText;
 						price += (prodPrice * product[1])
 						break;
 					}
@@ -60,8 +64,13 @@ var AddToCart = (function() {
 	var getLowerCaseName = function(productName) {
 		var products = payment_info.getElementsByTagName("name");
 		for (var i=0; i<products.length; i++) {
-			if (products[i].innerHTML == productName) {
-				return products[i].parentNode.getElementsByTagName("filename")[0].innerHTML;
+			console.log(products[i]);
+			console.log(products[i].textContent || products[i].innerText);
+			console.log("*-*-*ijebg*-*-*");
+			var insideElement = products[i].textContent || products[i].innerText;
+			if (insideElement == productName) {
+				return products[i].parentNode.getElementsByTagName("filename")[0].textContent
+				|| products[i].parentNode.getElementsByTagName("filename")[0].innerText;
 			}
 		}
 		return "";
@@ -82,6 +91,7 @@ var AddToCart = (function() {
 				product[1] = parseInt(product[1]) + 1;
 			}
 
+			console.log("In addproduct, before getLowerCaseName()" + product[0]);
 			var productnamelowercase = getLowerCaseName(product[0]);
 
 			if (sessionStorage.getItem((identifier+product[0])) === null) {

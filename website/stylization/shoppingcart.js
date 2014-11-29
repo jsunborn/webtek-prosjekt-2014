@@ -117,8 +117,9 @@ function getProductPrice(product) {
     var productsNamesFromXML = payment_info.getElementsByTagName("name"); // Get all product names
 
     for(var i = 0; i < productsNamesFromXML.length; i++) { // Loop through names
-        if (productsNamesFromXML[i].innerHTML == getProductName(product)) { // Check if name corresponds to this product
-            return productsNamesFromXML[i].parentNode.getElementsByTagName("price")[0].innerHTML; // Get parent element (product) and get the content of it's child element, price
+        if ((productsNamesFromXML[i].textContent || productsNamesFromXML[i].innerText) == getProductName(product)) { // Check if name corresponds to this product
+            return productsNamesFromXML[i].parentNode.getElementsByTagName("price")[0].textContent
+            || productsNamesFromXML[i].parentNode.getElementsByTagName("price")[0].innerText; // Get parent element (product) and get the content of it's child element, price
         }
     }
 }
@@ -227,7 +228,7 @@ function isProductValid(product) {
     var productsNamesFromXML = payment_info.getElementsByTagName("name");
 
     for(var i = 0; i < productsNamesFromXML.length; i++) {
-        if (productsNamesFromXML[i].innerHTML == getProductName(product)) {
+        if ((productsNamesFromXML[i].textContent || productsNamesFromXML[i].innerText) == getProductName(product)) {
             return true;
         }
     }
