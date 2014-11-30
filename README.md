@@ -1,5 +1,9 @@
 #README: BOARD
 ####Boardgames are Overpowered And Really Delightful
+#####Made by:
+######Sondre Erstad,
+######Jørgen Sirhaug og
+######Kristoffer Thøring
 
 ###Purpose of the Website
 BOARD is a website / webstore made by three brilliant students at NTNU, Norwegian University of Technology and Science, as a project for the course IT2805, Web Technology.
