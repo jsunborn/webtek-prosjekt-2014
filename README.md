@@ -2,7 +2,7 @@
 ####Boardgames are Overpowered And Really Delightful
 #####Made by:
 ######Sondre Erstad,
-######Jørgen Sirhaug og
+######Jørgen Sirhaug and
 ######Kristoffer Thøring
 
 ###Purpose of the Website
